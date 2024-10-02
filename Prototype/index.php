@@ -22,7 +22,28 @@
         </ul>
     </header>
     <main>
-
+        <p>
+            Welcome to the [Company Name] Smart Manufacturing Dashboard! Please login to continue.
+        </p>
+        <form action="login.php" method="post">
+            <ul>
+                <li>
+                     <label for="username">USERNAME</label>
+                </li>
+                <li>
+                    <input type="text" id="username" name="username" required>
+                </li>
+                <li>
+                    <label for="password">PASSWORD</label>
+                </li>
+                <li>
+                    <input type="password" id="password" name="password" required>
+                </li>
+                <li>
+                    <button type="submit">Login</button>
+                </li>
+            </ul>
+        </form>
     </main>
 </body>
 </html>
