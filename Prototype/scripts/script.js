@@ -1,0 +1,3 @@
+/*
+Scripts used in website to be placed in here
+*/
