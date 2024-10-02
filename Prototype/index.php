@@ -1,3 +1,4 @@
+/* Ensure that xamp is running and navagiatve to localhost/Prototype/index.php */
 <!DOCTYPE html>
 <html lang="en">
 <head>
