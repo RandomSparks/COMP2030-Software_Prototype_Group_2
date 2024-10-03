@@ -40,9 +40,11 @@
                     <input type="password" id="password" name="password" required>
                 </li>
             </ul>
-                <button type="submit">Login</button>
                 <input type="checkbox" id="sign_in" name="sign_in">
-                <label for="sign_in"> Keep me signed in</label>
+                <label for="sign_in">Keep me signed in</label>
+                <button type="submit" id="Login">Login</button>
+
+
         </form>
     </main>
 </body>
