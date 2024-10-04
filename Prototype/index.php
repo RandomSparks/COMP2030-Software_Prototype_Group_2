@@ -29,7 +29,7 @@
                 Welcome to the [Company Name] Smart Manufacturing Dashboard! Please login to continue.
             </p>
             <hr>
-            <form action="..\pages\home.php" method="post">
+            <form action=".\pages\home.php" method="post">
                 <ul>
                     <li>
                         <label for="username">USERNAME</label>
@@ -45,7 +45,7 @@
                         <input type="checkbox" id="sign_in" name="sign_in">
                         <label for="sign_in">Keep me signed in</label>
                     </div>
-                    <a href="">Forgotten Password?</a>
+                    <a href=".\pages\password.php">Forgotten Password?</a>
                 </div> 
                     <button type="submit">Login</button>
             </form>
@@ -54,7 +54,7 @@
     
     <footer>
         <div id="support">
-            <a href=" ">Support</a>
+            <a href="">Support</a>
         </div>
     </footer>
 </body>
