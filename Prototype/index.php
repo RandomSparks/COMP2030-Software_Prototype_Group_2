@@ -40,11 +40,11 @@
                     <input type="password" id="password" name="password" required>
                 </li>
             </ul>
+                <button type="submit" id="Login">Login</button>
                 <input type="checkbox" id="sign_in" name="sign_in">
                 <label for="sign_in">Keep me signed in</label>
-                <button type="submit" id="Login">Login</button>
-
-
+                <a href=""><p id="ForgotPassLink">Forgotten Password?</p></a> 
+                
         </form>
     </main>
 </body>
