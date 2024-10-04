@@ -1,4 +1,6 @@
 /* Styles for website should be developed here */
+
+/* Universal Styles */
 *{
     margin: 0px;
     padding: 0px;
@@ -9,8 +11,10 @@
 body {
     font-family: 'Gill Sans', sans-serif;
 }
+/* ------------------*/
 
-header {
+/* "Landing page styles" e.g login + forgot password */
+.landing_header {
     width: 100vw;
     height: 100px;
     display: flex;
@@ -18,8 +22,7 @@ header {
     background-color: rgb(184, 184, 184);
     position: relative;
 }
-header div img{
-    position: fixed;
+.landing_header div img{
     width: 50px;
     height: 50px;
     top: 20px;
@@ -28,9 +31,9 @@ header div img{
     border: solid black 1px;
     box-shadow: 2px 2px 2px black;
     position: absolute;
+    object-fit: contain;
 }
-header div a{
-    position: fixed;
+.landing_header a{
     font-size: 26px;
     top: 20px;
     left: 90px;
@@ -40,7 +43,7 @@ header div a{
     color: black;
     text-decoration: none;
 }
-header ul{
+.landing_header ul{
     width: 500px;
     list-style-type: none;
     display: flex;
@@ -48,23 +51,25 @@ header ul{
     align-items: center;
     flex-direction: column;
 }
-header ul .title{
+.landing_header ul .title{
     font-size: 32px;
     margin-bottom: 5px;
+    font-weight: bold;
 }
-header ul li{
+.landing_header ul p{
+    font-style: italic;
     text-align: center;
     font-size: 16px;
 }
 
-/* Log-in Box */
-main {
+/* Log-in Box + Forgotten pw box */
+.landing_main {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100vw;
 }
-main .box {
+.landing_main .box {
     margin-top: 40px;
     width: 400px;
     border: solid grey 2px;
@@ -74,11 +79,11 @@ main .box {
     box-shadow: 2px 2px 2px black;
     margin-bottom: 60px;
 }
-main .box p{
+.landing_main .box p{
     margin: 20px;
     font-size: 14px;
 }
-main form {
+.landing_main form {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -86,30 +91,30 @@ main form {
     align-items: center;
     text-align: left;
 }
-main form ul {
+.landing_main form ul {
     list-style-type: none;
     margin-top: 20px;
 }
-main form ul li {
+.landing_main form ul li {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
 }
-main form ul li label {
+.landing_main form ul li label {
     display: flex;
     flex-direction: column;
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 10px;
 }
-main form ul li input {
+.landing_main form ul li input {
     width: 300px;
     font-size: 14px;
     padding: 5px;
     border: solid black 2px;
     border-radius: 3px;
 }
-main form ul li textarea {
+.landing_main form ul li textarea {
     width: 300px;
     font-size: 14px;
     padding: 5px;
@@ -118,28 +123,28 @@ main form ul li textarea {
     height: 60px;
 }
 
-main form .rememberMe {
+.landing_main form .rememberMe {
     display: flex;
     justify-content: space-between;
     width: 80%;
     font-size: 14px;
 }
-main form .rememberMe input{
+.landing_main form .rememberMe input{
     margin-right: 2px;
     cursor: pointer;
 }
-main form .rememberMe a {
+.landing_main form .rememberMe a {
     text-align: right;
     font-size: 14px;
     text-decoration: underline;
     font-style: italic;
     color: black;
 }
-main form #forgot_password_submit {
+.landing_main form #forgot_password_submit {
     margin-top: 10px;
 }
 
-main form button {
+.landing_main form button {
     margin-top: 30px;
     margin-bottom: 20px;
     width: 80%;
@@ -150,30 +155,37 @@ main form button {
     border: none;
     cursor: pointer;
 }
-main form button:hover {
+.landing_main form button:hover {
     background-color: rgb(125, 125, 125);
 }
 
-footer {
+
+/* Landing page Footer */
+.landing_footer {
     width: 100vw;
     height: 60px;
     display: flex;
     justify-content: center;
     background-color: rgb(184, 184, 184);
-    position: relative;
+    position: fixed;
+    bottom: 0;
 }
-footer #support {
+.landing_footer #support {
    font-size: 20px;
    margin-top: 20px;
    display: flex;
    width: 200px;
-   justify-content: space-evenly;
+   justify-content: center;
 }
-footer #support a{
+.landing_footer #support a{
     color: black;
     text-decoration: none;
 }
-footer #support a:hover{
+.landing_footer #support a:hover{
     font-style: italic;
     text-decoration: underline;
 }
+
+/* --------------------------------*/
+
+/* Dashboard/home styles*/

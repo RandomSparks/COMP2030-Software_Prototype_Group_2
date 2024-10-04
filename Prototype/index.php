@@ -9,27 +9,29 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <header>
+    <header class="landing_header">
         <div>
-            <img src="" alt="Logo">
-            <a href="">Company Name</a>
+            <img src="images\placeholder.jpg" alt="Logo">
+            <a href="./index.php">Company Name</a>
         </div>
         <ul>
             <li class="title">
                 <strong>Login Portal</strong>
             </li>
             <li>
-                Please login to continue to [Company Name] Dashboard
+                <p>
+                    Please login to continue to [Company Name] Dashboard
+                </p>
             </li>
         </ul>
     </header>
-    <main>
+    <main class="landing_main">
         <div class="box">
             <p>
                 Welcome to the [Company Name] Smart Manufacturing Dashboard! Please login to continue.
             </p>
             <hr>
-            <form action="..\pages\home.php" method="post">
+            <form action=".\pages\home.php" method="post">
                 <ul>
                     <li>
                         <label for="username">USERNAME</label>
@@ -45,16 +47,16 @@
                         <input type="checkbox" id="sign_in" name="sign_in">
                         <label for="sign_in">Keep me signed in</label>
                     </div>
-                    <a href="">Forgotten Password?</a>
+                    <a href=".\pages\password.php">Forgotten Password?</a>
                 </div> 
                     <button type="submit">Login</button>
             </form>
         </div>
     </main>
     
-    <footer>
+    <footer class="landing_footer">
         <div id="support">
-            <a href=" ">Support</a>
+            <a href="">Support</a>
         </div>
     </footer>
 </body>
