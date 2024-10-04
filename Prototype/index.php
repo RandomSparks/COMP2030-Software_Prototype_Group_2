@@ -51,5 +51,11 @@
             </form>
         </div>
     </main>
+    
+    <footer>
+        <div id="support">
+            <a href=" ">Support</a>
+        </div>
+    </footer>
 </body>
 </html>
