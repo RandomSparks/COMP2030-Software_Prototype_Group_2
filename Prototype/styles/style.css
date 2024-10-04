@@ -3,6 +3,7 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 body {
@@ -15,6 +16,7 @@ header {
     display: flex;
     justify-content: center;
     background-color: rgb(184, 184, 184);
+    position: relative;
 }
 header div img{
     position: fixed;
@@ -25,6 +27,7 @@ header div img{
     border-radius: 50%;
     border: solid black 1px;
     box-shadow: 2px 2px 2px black;
+    position: absolute;
 }
 header div h1{
     position: fixed;
@@ -33,6 +36,7 @@ header div h1{
     left: 90px;
     width: 160px;
     text-wrap: wrap;
+    position: absolute;
 }
 header ul{
     width: 500px;
@@ -66,9 +70,10 @@ main .box {
     background-color: rgb(239, 239, 239);
     text-align: center;
     box-shadow: 2px 2px 2px black;
+    margin-bottom: 60px;
 }
 main .box p{
-    margin: 40px 20px;
+    margin: 20px;
     font-size: 14px;
 }
 main form {
@@ -102,6 +107,14 @@ main form ul li input {
     border: solid black 2px;
     border-radius: 3px;
 }
+main form ul li textarea {
+    width: 300px;
+    font-size: 14px;
+    padding: 5px;
+    border: solid black 2px;
+    border-radius: 3px;
+    height: 60px;
+}
 
 main form .rememberMe {
     display: flex;
@@ -119,9 +132,11 @@ main form .rememberMe a {
     text-decoration: underline;
     font-style: italic;
     color: black;
-    
-
 }
+main form #forgot_password_submit {
+    margin-top: 10px;
+}
+
 main form button {
     margin-top: 30px;
     margin-bottom: 20px;
@@ -135,4 +150,28 @@ main form button {
 }
 main form button:hover {
     background-color: rgb(125, 125, 125);
+}
+
+footer {
+    width: 100vw;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(184, 184, 184);
+    position: relative;
+}
+footer #support {
+   font-size: 20px;
+   margin-top: 20px;
+   display: flex;
+   width: 200px;
+   justify-content: space-evenly;
+}
+footer #support a{
+    color: black;
+    text-decoration: none;
+}
+footer #support a:hover{
+    font-style: italic;
+    text-decoration: underline;
 }
