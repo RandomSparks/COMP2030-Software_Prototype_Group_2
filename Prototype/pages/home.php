@@ -28,43 +28,43 @@
                 <li>
                     <img src="../images/placeholder.jpg" alt="overview">
                     <p>
-                        Home
+                        Overview
                     </p>
                 </li>
                 <li>
                     <img src="../images/placeholder.jpg" alt="production">
                     <p>
-                        Home
+                        Production
                     </p>
                 </li>
                 <li>
                     <img src="../images/placeholder.jpg" alt="performance">
                     <p>
-                        Home
+                        Performance
                     </p>
                 </li>
                 <li>
                     <img src="../images/placeholder.jpg" alt="alerts">
                     <p>
-                        Home
+                        Alerts
                     </p>
                 </li>
                 <li>
                     <img src="../images/placeholder.jpg" alt="administation">
                     <p>
-                        Home
+                        Administation
                     </p>
                 </li>
                 <li>
                     <img src="../images/placeholder.jpg" alt="maintenance">
                     <p>
-                        Home
+                        Maintenance
                     </p>
                 </li>
                 <li>
                     <img src="../images/placeholder.jpg" alt="reporting">
                     <p>
-                        Home
+                        Reporting
                     </p>
                 </li>
             </ul>
@@ -83,7 +83,7 @@
                 </li>
             </ul>
             <div id="div_logout">
-                <img src="../images/placeholder.jpg" alt="support">
+                <img src="../images/placeholder.jpg" alt="Logout">
                 <p>
                     Logout
                 </p>
