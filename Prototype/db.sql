@@ -25,7 +25,7 @@ CREATE TABLE factory_logs (
 );
 
 -- Load data from the CSV file into the factory_logs table
-LOAD DATA INFILE 'path/to/factory_logs.csv'
+LOAD DATA INFILE '!!! Change this path/to/factory_logs.csv !!! Make sure you use / not \ !!!'
 INTO TABLE factory_logs
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
