@@ -16,7 +16,7 @@
         </div>
         <ul>
             <li class="title">
-                <strong>Login Portal</strong>
+                <strong>Forgot Password</strong>
             </li>
             <li>
                 Please login to continue to [Company Name] Dashboard
@@ -26,18 +26,25 @@
     <main>
         <div class="box">
             <p>
-                Welcome to the [Company Name] Smart Manufacturing Dashboard! Please login to continue.
+                Forgot your password?
+            </p>
+            <p>
+                A system admin will send you your new password as soon as possible.
             </p>
             <hr>
             <form action="login.php" method="post">
                 <ul>
                     <li>
-                        <label for="username">USERNAME</label>
+                        <label for="username">USERNAME*</label>
                         <input type="text" id="username" name="username" required placeholder="username">
                     </li>
                     <li>
-                        <label for="password">PASSWORD</label>
+                        <label for="password">PASSWORD*</label>
                         <input type="password" id="password" name="password" required placeholder="password">
+                    </li>
+                    <li>
+                        <label for="password">Notes</label>
+                        <textarea name="note" id="notes"></textarea>
                     </li>
                 </ul>
                 <div class="rememberMe">
