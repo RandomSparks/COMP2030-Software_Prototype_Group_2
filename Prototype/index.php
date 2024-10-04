@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <header>
+    <header class="landing_header">
         <div>
             <img src="" alt="Logo">
-            <a href="">Company Name</a>
+            <a href="./index.php">Company Name</a>
         </div>
         <ul>
             <li class="title">
@@ -23,7 +23,7 @@
             </li>
         </ul>
     </header>
-    <main>
+    <main class="landing_main">
         <div class="box">
             <p>
                 Welcome to the [Company Name] Smart Manufacturing Dashboard! Please login to continue.
@@ -52,7 +52,7 @@
         </div>
     </main>
     
-    <footer>
+    <footer class="landing_footer">
         <div id="support">
             <a href="">Support</a>
         </div>
