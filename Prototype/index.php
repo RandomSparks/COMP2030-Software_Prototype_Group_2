@@ -12,7 +12,7 @@
     <header>
         <div>
             <img src="" alt="Logo">
-            <h1>Company Name</h1>
+            <a href="">Company Name</a>
         </div>
         <ul>
             <li class="title">

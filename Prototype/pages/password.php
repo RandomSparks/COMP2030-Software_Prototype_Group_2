@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Developed_By" content="smul0003_basn0058_tami0009_will1941_beam0036_park0903">
     <title>Forgot Password</title>
-    <link rel="stylesheet" href="../Prototype/styles/style.css">
+    <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
     <header>
         <div>
             <img src="" alt="Logo">
-            <h1>Company Name</h1>
+            <a href="../index.php">Company Name</a>
         </div>
         <ul>
             <li class="title">
