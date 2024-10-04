@@ -11,7 +11,7 @@
 <body>
     <header class="landing_header">
         <div>
-            <img src="images\placeholder.jpg" alt="Logo">
+            <img src="../images/placeholder.jpg" alt="Logo">
             <a href="./index.php">Company Name</a>
         </div>
         <ul>
