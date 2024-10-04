@@ -1,6 +1,6 @@
 SET @@AUTOCOMMIT = 1;
 
-DROP DATABASE IF EXISTS PROTOTYPE_DB; /* Remove if required */ 
+-- DROP DATABASE IF EXISTS PROTOTYPE_DB; -- Remove if required
 CREATE DATABASE PROTOTYPE_DB;
 
 USE PROTOTYPE_DB;
@@ -8,25 +8,7 @@ USE PROTOTYPE_DB;
 CREATE user IF NOT EXISTS dbadmin@localhost;
 GRANT all privileges ON PROTOTYPE_DB.Task TO dbadmin@localhost;
 
-/* BELOW IS EXAMPLE FROM PRAC 3 
-
-
-CREATE TABLE Task(
-    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    name varchar(100),
-    completed boolean NOT NULL DEFAULT 0,
-    updated timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) AUTO_INCREMENT = 1;
-
-
-INSERT INTO Task(name) VALUES('Complete Checkpoint 1');
-INSERT INTO Task(name) VALUES('Complete Checkpoint 2');
-INSERT INTO Task(name) VALUES('Complete Checkpoint 3');
-INSERT INTO Task(name) VALUES('Complete Checkpoint 4');
-INSERT INTO Task(name) VALUES('Complete Checkpoint 5');
-*/
-
-/* Create factory_logs table */
+-- Create factory_logs table
 CREATE TABLE factory_logs (
     timestamp DATETIME NOT NULL,
     machine_name VARCHAR(255) NOT NULL,
@@ -42,7 +24,7 @@ CREATE TABLE factory_logs (
     speed FLOAT
 );
 
-/* Load data from the CSV file into the factory_logs table */
+-- Load data from the CSV file into the factory_logs table
 LOAD DATA INFILE 'path/to/factory_logs.csv'
 INTO TABLE factory_logs
 FIELDS TERMINATED BY ','
@@ -51,3 +33,20 @@ LINES TERMINATED BY '\n'
 IGNORE 1 ROWS
 (@timestamp, machine_name, temperature, pressure, vibration, humidity, power_consumption, operational_status, error_code, production_count, maintenance_log, speed)
 SET timestamp = STR_TO_DATE(@timestamp, '%d/%m/%Y %H:%i');
+
+
+
+-- Create users table
+CREATE TABLE users (
+    user_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    role_id TEXT NOT NULL
+);
+
+-- Example users (passwords should be hashed in a real application)
+INSERT INTO users (username, password, role_id) VALUES
+('admin', 'admin_password', 'Administrator'),
+('test_manager', 'manager_password', 'Manager'),
+('test_operator', 'operator_password', 'Operator'),
+('test_auditor', 'auditor_password', 'Auditor');
