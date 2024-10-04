@@ -31,6 +31,7 @@ body {
     border: solid black 1px;
     box-shadow: 2px 2px 2px black;
     position: absolute;
+    object-fit: contain;
 }
 .landing_header a{
     font-size: 26px;
@@ -53,8 +54,10 @@ body {
 .landing_header ul .title{
     font-size: 32px;
     margin-bottom: 5px;
+    font-weight: bold;
 }
-.landing_header ul li{
+.landing_header ul p{
+    font-style: italic;
     text-align: center;
     font-size: 16px;
 }

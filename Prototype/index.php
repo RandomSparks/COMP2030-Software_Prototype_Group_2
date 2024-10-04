@@ -11,7 +11,7 @@
 <body>
     <header class="landing_header">
         <div>
-            <img src="" alt="Logo">
+            <img src="images\placeholder.jpg" alt="Logo">
             <a href="./index.php">Company Name</a>
         </div>
         <ul>
@@ -19,7 +19,9 @@
                 <strong>Login Portal</strong>
             </li>
             <li>
-                Please login to continue to [Company Name] Dashboard
+                <p>
+                    Please login to continue to [Company Name] Dashboard
+                </p>
             </li>
         </ul>
     </header>
