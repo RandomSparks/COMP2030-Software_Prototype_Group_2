@@ -12,13 +12,13 @@
     <header>
 
     </header>
-    <main>
+    <main id="home-main">
         <div id="div_sidebar">
-            <div id="div_name">
+            <div id="div_logo">
                 <img src="../images/placeholder.jpg" alt="Logo">
                 <h1>Company Name</h1>
             </div>
-            <ul class="ul_menu">
+            <ul id="ul_menu">
                 <li>
                     <img src="../images/placeholder.jpg" alt="home">
                     <p>
