@@ -39,7 +39,7 @@
                 </li>
                 <li>
                     <img src="../images/placeholder.jpg" alt="performance">
-                    <a href="">
+                    <a href="performance.php">
                         Performance
                     </a>
                 </li>
