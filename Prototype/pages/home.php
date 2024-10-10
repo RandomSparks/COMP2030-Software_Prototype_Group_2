@@ -21,72 +21,72 @@
             <ul id="ul_menu">
                 <li>
                     <img src="../images/placeholder.jpg" alt="home">
-                    <p>
+                    <a href="">
                         Home
-                    </p>
+                    </a>
                 </li>
                 <li>
                     <img src="../images/placeholder.jpg" alt="overview">
-                    <p>
+                    <a href="">
                         Overview
-                    </p>
+                    </a>
                 </li>
                 <li>
                     <img src="../images/placeholder.jpg" alt="production">
-                    <p>
+                    <a href="">
                         Production
-                    </p>
+                    </a>
                 </li>
                 <li>
                     <img src="../images/placeholder.jpg" alt="performance">
-                    <p>
+                    <a href="">
                         Performance
-                    </p>
+                    </a>
                 </li>
                 <li>
                     <img src="../images/placeholder.jpg" alt="alerts">
-                    <p>
+                    <a href="">
                         Alerts
-                    </p>
+                    </a>
                 </li>
                 <li>
                     <img src="../images/placeholder.jpg" alt="administation">
-                    <p>
+                    <a href="">
                         Administation
-                    </p>
+                    </a>
                 </li>
                 <li>
                     <img src="../images/placeholder.jpg" alt="maintenance">
-                    <p>
+                    <a href="">
                         Maintenance
-                    </p>
+                    </a>
                 </li>
                 <li>
                     <img src="../images/placeholder.jpg" alt="reporting">
-                    <p>
+                    <a href="">
                         Reporting
-                    </p>
+                    </a>
                 </li>
             <div id="ul_support_settings">
                 <li>
                     <img src="../images/placeholder.jpg" alt="settings">
-                    <p>
+                    <a href="">
                         Settings
-                    </p>
+                    </a>
                 </li>
                 <li>
                     <img src="../images/placeholder.jpg" alt="support">
-                    <p>
+                    <a href="">
                         Support
-                    </p>
+                    </a>
                 </li>
             </div>
             </ul>
             <div id="div_logout">
                 <img src="../images/placeholder.jpg" alt="Logout">
-                <p>
+                <a href="">
                     Logout
-                </p>
+                </a>
             </div>
         </div>
     </main>

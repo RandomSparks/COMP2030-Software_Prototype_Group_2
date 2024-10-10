@@ -258,10 +258,12 @@ body {
     height: 30px;
     border-radius: 50%;
 }
-#ul_menu li p, #ul_support_settings li p{
+#ul_menu li a{
     font-size: 16px;
     margin-left: 30px;
     font-weight: 500;
+    text-decoration: none;
+    color: black;
 }
 
 #ul_support_settings {
@@ -284,10 +286,12 @@ body {
     height: 30px;
     border-radius: 50%;
 }
-#div_logout p{
+#div_logout a{
     font-size: 16px;
     margin-left: 30px;
     font-weight: bold;
+    text-decoration: none;
+    color: black;
 }
 
 #div_info {
@@ -298,6 +302,6 @@ body {
     width: 100%;
     height: 30px;
 }
-/* #div_logout:hover + p {
+#div_logout a:hover{
     text-decoration: underline;
-} */
+}
