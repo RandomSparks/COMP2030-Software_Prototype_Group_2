@@ -91,8 +91,8 @@
         </div>
     </main>
     <footer>
-        <div id="support">
-            <a href="">Support</a>
+        <div id="div_info">
+            <a href="">Info</a>
         </div>
     </footer>
 </body>

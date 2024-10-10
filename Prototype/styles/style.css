@@ -191,6 +191,11 @@ body {
 
 /* Home.php Styles */
 
+#home-main {
+    height: 100vh;
+    width: 100vw;
+}
+
 #div_sidebar {
     background-color: rgb(207, 206, 206);
     border-right: solid black 1px;
@@ -200,7 +205,7 @@ body {
     left: 0;
     display: flex;
     flex-direction: column;
-    height: 900px; /* I personally feel like keeping this static is better for smaller screens but you do you though */
+    height: 100vh;
 }
 
 #div_logo {
@@ -234,12 +239,13 @@ body {
 }
 
 #ul_menu {
-    margin-top: 100px;
+    margin-top: 120px;
+    height: 400px;
 }
 #ul_menu li, #ul_support_settings li{
     display: flex;
     align-items: center;
-    height: 40px;
+    height: 50px;
     margin-left: 10px;
     cursor: pointer;
 }
@@ -255,11 +261,14 @@ body {
     font-size: 16px;
     margin-left: 30px;
     font-weight: 500;
-    font-weight: bold;
 }
+
 #ul_support_settings {
-    margin-top: 80px;
+    margin-top: 10px;
+    margin-bottom: 69px;
+    height: 100px;
 }
+
 #div_logout {
     display: flex;
     align-items: center;
@@ -268,6 +277,8 @@ body {
     margin-top: 30px;
     opacity: .4;
     cursor: pointer;
+    position: absolute;
+    bottom: 10px;
 }
 #div_logout img{
     width: 30px;
@@ -278,6 +289,15 @@ body {
     font-size: 16px;
     margin-left: 30px;
     font-weight: bold;
+}
+
+#div_info {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
 }
 /* #div_logout:hover + p {
     text-decoration: underline;
