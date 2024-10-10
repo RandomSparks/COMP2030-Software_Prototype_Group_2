@@ -67,8 +67,7 @@
                         Reporting
                     </p>
                 </li>
-            </ul>
-            <ul id="ul_support_settings">
+            <div id="ul_support_settings">
                 <li>
                     <img src="../images/placeholder.jpg" alt="settings">
                     <p>
@@ -81,6 +80,7 @@
                         Support
                     </p>
                 </li>
+            </div>
             </ul>
             <div id="div_logout">
                 <img src="../images/placeholder.jpg" alt="Logout">
@@ -91,8 +91,8 @@
         </div>
     </main>
     <footer>
-        <div id="support">
-            <a href="">Support</a>
+        <div id="div_info">
+            <a href="">Info</a>
         </div>
     </footer>
 </body>
