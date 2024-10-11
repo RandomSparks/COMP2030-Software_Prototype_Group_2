@@ -71,8 +71,11 @@
                     echo "No records found.";
                 }
 
-          $conn->close();
-          ?>
+                $conn->close();
+                ?>
+            </div>
+        </div>
+    </main>
   <footer>
       <?php require_once "../inc/info.php"; ?>
   </footer>
