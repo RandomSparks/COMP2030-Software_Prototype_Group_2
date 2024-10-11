@@ -192,8 +192,10 @@ body {
 /* Home.php Styles */
 
 #home-main {
-    height: 100vh;
+    display: flex;
     width: 100vw;
+    height: 100vh;
+    position: static;
 }
 
 #div_sidebar {
@@ -309,4 +311,8 @@ body {
 
 #ul_menu a.selected {
     font-weight: bold;
+}
+
+#div_content {
+
 }

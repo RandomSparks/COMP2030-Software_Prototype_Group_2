@@ -28,56 +28,56 @@
                 </li>
                 <li>
                     <img src="../images/placeholder.jpg" alt="overview">
-                    <a href="">
+                    <a href="overview.php">
                         Overview
                     </a>
                 </li>
                 <li>
                     <img src="../images/placeholder.jpg" alt="production">
-                    <a href="">
+                    <a href="production.php">
                         Production
                     </a>
                 </li>
                 <li>
                     <img src="../images/placeholder.jpg" alt="performance">
-                    <a href="">
+                    <a href="performance.php">
                         Performance
                     </a>
                 </li>
                 <li>
                     <img src="../images/placeholder.jpg" alt="alerts">
-                    <a href="">
+                    <a href="alerts.php">
                         Alerts
                     </a>
                 </li>
                 <li>
                     <img src="../images/placeholder.jpg" alt="administation">
-                    <a href="">
+                    <a href="admin.php">
                         Administation
                     </a>
                 </li>
                 <li>
                     <img src="../images/placeholder.jpg" alt="maintenance">
-                    <a href="">
+                    <a href="maintenance.php">
                         Maintenance
                     </a>
                 </li>
                 <li>
                     <img src="../images/placeholder.jpg" alt="reporting">
-                    <a href="">
+                    <a href="reporting.php">
                         Reporting
                     </a>
                 </li>
             <div id="ul_support_settings">
                 <li>
                     <img src="../images/placeholder.jpg" alt="settings">
-                    <a href="">
+                    <a href="settings.php">
                         Settings
                     </a>
                 </li>
                 <li>
                     <img src="../images/placeholder.jpg" alt="support">
-                    <a href="">
+                    <a href="support.php">
                         Support
                     </a>
                 </li>
@@ -89,6 +89,9 @@
                     Logout
                 </a>
             </div>
+        </div>
+        <div id="div_content">
+            Home
         </div>
     </main>
     <footer>
