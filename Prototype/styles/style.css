@@ -304,4 +304,9 @@ body {
 }
 #div_logout a:hover{
     text-decoration: underline;
+    color: red;
+}
+
+#ul_menu a.selected {
+    font-weight: bold;
 }

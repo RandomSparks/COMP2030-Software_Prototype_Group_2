@@ -7,6 +7,7 @@
     <meta name="Developed_By" content="smul0003_basn0058_tami0009_will1941_beam0036_park0903">
     <title>Dashboard/Home</title>
     <link rel="stylesheet" href="../styles/style.css">
+    <script src="../scripts/script.js" defer></script>
 </head>
 <body>
     <header>
@@ -21,7 +22,7 @@
             <ul id="ul_menu">
                 <li>
                     <img src="../images/placeholder.jpg" alt="home">
-                    <a href="">
+                    <a href="home.php">
                         Home
                     </a>
                 </li>
