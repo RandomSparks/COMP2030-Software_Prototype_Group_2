@@ -10,16 +10,18 @@
     <script src="../scripts/script.js" defer></script>
 </head>
 <body>
-    <header>
-
-    </header>
     <main id="home-main">
-        <?php require_once "../inc/sidebar.php"; ?>
+
+        <?php 
+        require_once "../inc/sidebar.php"; 
+        require_once "../inc/header.php";
+        ?>
+        <div id="div_content">
+            Home
+        </div>
     </main>
     <footer>
-        <div id="div_info">
-            <a href="">Info</a>
-        </div>
+        <?php require_once "../inc/info.php"; ?>
     </footer>
 </body>
 </html>
