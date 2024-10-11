@@ -324,7 +324,39 @@ body {
     position: absolute;
     top: 0;
     left: 220px;
+    border-bottom: solid black 1px;
 }
+
+#div_header img {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    border: solid black 1px;
+    object-fit: contain;
+    display: flex;
+    position: absolute;
+    right: 17px;
+}
+
+#div_header #header_title {
+    display: flex;
+    position: absolute;
+    right: 120px;
+    font-weight: bold;
+    font-size: 30px;
+    top: 25px;
+}
+
+#div_header #header_subtitle {
+    display: flex;
+    position: absolute;
+    right: 120px;
+    top: 55px;
+    font-style: italic;
+    color: grey;
+    font-size: 20px;
+}
+
 
 
 #div_content {
@@ -334,6 +366,7 @@ body {
     left: 220px;
     width: calc(100vw - 220px);
     height: calc(100vh - 150px);
+    flex-direction: column;
 }
 
 #div_info {
@@ -346,4 +379,5 @@ body {
     position: absolute;
     bottom: 0;
     left: 220px;
+    border-top: solid black 1px;
 }
