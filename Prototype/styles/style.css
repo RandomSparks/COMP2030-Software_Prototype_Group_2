@@ -360,7 +360,7 @@ body {
 
 
 
-#div_content {
+.div_content {
     display: flex;
     position: absolute;
     top: 110px;

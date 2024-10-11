@@ -16,7 +16,7 @@
         require_once "../inc/sidebar.php"; 
         require_once "../inc/header.php";
         ?>
-        <div id="div_content">
+        <div class="div_content">
             <h1>
                 Welcome to the [Company Name] Smart Manufacturing Dashboard, Hiroshi.
             </h1>
