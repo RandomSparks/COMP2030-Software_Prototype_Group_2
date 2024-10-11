@@ -347,3 +347,51 @@ body {
     bottom: 0;
     left: 220px;
 }
+
+/* Ensure the main content is displayed as a flex container */
+#performance-main {
+    display: flex;
+    flex-wrap: nowrap;
+    height: calc(100vh - 40px); /* Adjust height to account for the footer */
+    overflow: hidden; /* Prevent overflow */
+}
+
+/* Style the performance table container */
+#perf_table {
+    flex: 1; /* Take up the remaining space */
+    overflow: auto;
+}
+
+/* Style the table */
+#factory_logs_table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#factory_logs_table th, #factory_logs_table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#factory_logs_table th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+/* Style the scrollbars for WebKit browsers */
+#perf_table::-webkit-scrollbar {
+    width: 16px; /* Set the width of the scrollbar */
+    height: 16px; /* Set the height of the scrollbar */
+}
+
+#perf_table::-webkit-scrollbar-thumb {
+    background-color: #888; /* Set the color of the scrollbar thumb */
+    border-radius: 8px; /* Set the border radius of the scrollbar thumb */
+}
+
+#perf_table::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Set the color of the scrollbar thumb on hover */
+}
+
+#perf_table::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Set the color of the scrollbar track */
+}
