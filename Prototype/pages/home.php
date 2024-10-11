@@ -7,6 +7,7 @@
     <meta name="Developed_By" content="smul0003_basn0058_tami0009_will1941_beam0036_park0903">
     <title>Dashboard/Home</title>
     <link rel="stylesheet" href="../styles/style.css">
+    <script src="../scripts/script.js" defer></script>
 </head>
 <body>
     <header>
@@ -21,19 +22,19 @@
             <ul id="ul_menu">
                 <li>
                     <img src="../images/placeholder.jpg" alt="home">
-                    <a href="">
+                    <a href="home.php">
                         Home
                     </a>
                 </li>
                 <li>
                     <img src="../images/placeholder.jpg" alt="overview">
-                    <a href="">
+                    <a href="overview.php">
                         Overview
                     </a>
                 </li>
                 <li>
                     <img src="../images/placeholder.jpg" alt="production">
-                    <a href="">
+                    <a href="production.php">
                         Production
                     </a>
                 </li>
@@ -45,38 +46,38 @@
                 </li>
                 <li>
                     <img src="../images/placeholder.jpg" alt="alerts">
-                    <a href="">
+                    <a href="alerts.php">
                         Alerts
                     </a>
                 </li>
                 <li>
                     <img src="../images/placeholder.jpg" alt="administation">
-                    <a href="">
+                    <a href="admin.php">
                         Administation
                     </a>
                 </li>
                 <li>
                     <img src="../images/placeholder.jpg" alt="maintenance">
-                    <a href="">
+                    <a href="maintenance.php">
                         Maintenance
                     </a>
                 </li>
                 <li>
                     <img src="../images/placeholder.jpg" alt="reporting">
-                    <a href="">
+                    <a href="reporting.php">
                         Reporting
                     </a>
                 </li>
             <div id="ul_support_settings">
                 <li>
                     <img src="../images/placeholder.jpg" alt="settings">
-                    <a href="">
+                    <a href="settings.php">
                         Settings
                     </a>
                 </li>
                 <li>
                     <img src="../images/placeholder.jpg" alt="support">
-                    <a href="">
+                    <a href="support.php">
                         Support
                     </a>
                 </li>
@@ -88,6 +89,9 @@
                     Logout
                 </a>
             </div>
+        </div>
+        <div id="div_content">
+            Home
         </div>
     </main>
     <footer>
