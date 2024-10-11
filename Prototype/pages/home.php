@@ -11,6 +11,7 @@
 </head>
 <body>
     <main id="home-main">
+
         <?php 
         require_once "../inc/sidebar.php"; 
         require_once "../inc/header.php";

@@ -4,8 +4,8 @@ SUBJECT TO CHANGE AS PER THE DATABASE CONFIGURATION
 <?php
 
 define("DB_HOST", "localhost");
-define("DB_NAME", "UXDATABASE");
-define("DB_USER", "dbadmin");
+define("DB_NAME", "prototype_db");
+define("DB_USER", "root");
 define("DB_PASS", "");
 
 $conn = @mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);

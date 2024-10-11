@@ -21,8 +21,8 @@
             <div id="perf_table">
                 <?php
                 require_once "../inc/dbconn.inc.php";
-
-                $sql = "SELECT * FROM factory_logs";
+              
+                $sql = "SELECT * FROM factory_logs LIMIT 25";
                 $result = $conn->query($sql);
 
                 if (!$result) {
@@ -71,14 +71,12 @@
                     echo "No records found.";
                 }
 
-                $conn->close();
-                ?>
-            </div>
-        </div>
-    </main>
-    <footer>
-        <?php require_once "../inc/info.php"; ?>
-    </footer>
+          $conn->close();
+          ?>
+  <footer>
+      <?php require_once "../inc/info.php"; ?>
+  </footer>
+
 </body>
 
 </html>
