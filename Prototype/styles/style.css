@@ -195,7 +195,7 @@ body {
     display: flex;
     width: 100vw;
     height: 100vh;
-    position: static;
+    flex-direction: column;
 }
 
 #div_sidebar {
@@ -314,8 +314,36 @@ body {
     font-weight: bold;
 }
 
-/*
-#div_content {
-
+#div_header {
+    background-color: rgb(228, 228, 228);
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    height: 110px;
+    width: calc(100vw - 220px);
+    position: absolute;
+    top: 0;
+    left: 220px;
 }
-*/
+
+
+#div_content {
+    display: flex;
+    position: absolute;
+    top: 110px;
+    left: 220px;
+    width: calc(100vw - 220px);
+    height: calc(100vh - 150px);
+}
+
+#div_info {
+    background-color: rgb(228, 228, 228);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: calc(100vw - 220px);
+    position: absolute;
+    bottom: 0;
+    left: 220px;
+}
