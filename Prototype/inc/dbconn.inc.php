@@ -4,7 +4,7 @@ SUBJECT TO CHANGE AS PER THE DATABASE CONFIGURATION
 <?php
 
 define("DB_HOST", "localhost");
-define("DB_NAME", "UXDATABASE");
+define("DB_NAME", "prototype_db");
 define("DB_USER", "dbadmin");
 define("DB_PASS", "");
 
