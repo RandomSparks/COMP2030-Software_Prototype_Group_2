@@ -85,7 +85,7 @@
             </ul>
             <div id="div_logout">
                 <img src="../images/placeholder.jpg" alt="Logout">
-                <a href="">
+                <a href="logout.php">
                     Logout
                 </a>
             </div>
