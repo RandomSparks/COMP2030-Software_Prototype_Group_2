@@ -20,9 +20,7 @@
         </div>
     </main>
     <footer>
-        <div id="div_info">
-            <a href="">Info</a>
-        </div>
+        <?php require_once "../inc/info.php"; ?>
     </footer>
 </body>
 </html>
