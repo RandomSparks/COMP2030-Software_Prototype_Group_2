@@ -17,7 +17,15 @@
         require_once "../inc/header.php";
         ?>
         <div id="div_content">
-            Home
+            <h1>
+                Welcome to the [Company Name] Smart Manufacturing Dashboard, Hiroshi.
+            </h1>
+            <p>
+                This Dashboard will allow to view factory statuses, production information, performance metrics, and any factory alerts.
+                You can also edit accounts, assign jobs, and machines, manage job information and read reports from production operators.
+
+                You may also configure your personal settings, request support, or log out of your account.
+            </p>
         </div>
     </main>
     <footer>
