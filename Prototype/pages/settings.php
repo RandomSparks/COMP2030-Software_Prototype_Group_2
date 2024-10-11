@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Developed_By" content="smul0003_basn0058_tami0009_will1941_beam0036_park0903">
-    <title>Dashboard/Home</title>
+    <title>Dashboard/Settings</title>
     <link rel="stylesheet" href="../styles/style.css">
     <script src="../scripts/script.js" defer></script>
 </head>
@@ -13,11 +13,8 @@
     <header>
 
     </header>
-    <main id="home-main">
+    <main id="settings-main">
         <?php require_once "../inc/sidebar.php"; ?>
-        <div id="div_content">
-            Home
-        </div>
     </main>
     <footer>
         <div id="div_info">

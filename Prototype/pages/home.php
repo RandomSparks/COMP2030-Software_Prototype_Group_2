@@ -15,9 +15,6 @@
     </header>
     <main id="home-main">
         <?php require_once "../inc/sidebar.php"; ?>
-        <div id="div_content">
-            Home
-        </div>
     </main>
     <footer>
         <div id="div_info">

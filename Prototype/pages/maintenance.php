@@ -13,11 +13,8 @@
     <header>
 
     </header>
-    <main id="home-main">
+    <main id="maintenance-main">
         <?php require_once "../inc/sidebar.php"; ?>
-        <div id="div_content">
-            Home
-        </div>
     </main>
     <footer>
         <div id="div_info">
