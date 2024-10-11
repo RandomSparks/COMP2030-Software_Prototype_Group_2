@@ -254,6 +254,7 @@ body {
 }
 #ul_menu a:hover, #ul_support_settings a:hover{
     text-decoration: underline;
+    color: rgb(106, 106, 221);
 }
 #ul_menu li img, #ul_support_settings li img{
     width: 30px;
