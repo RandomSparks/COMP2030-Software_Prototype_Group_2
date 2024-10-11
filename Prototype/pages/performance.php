@@ -16,7 +16,8 @@
 
     </header>
     <main id="performance-main">
-        <?php require_once "../inc/sidebar.php"; ?>
+        <?php require_once "../inc/sidebar.php";
+        require_once "../inc/header.php"; ?>
 
         <div id="perf_table">
             <?php
