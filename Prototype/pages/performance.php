@@ -23,7 +23,7 @@
         <?php
         require_once "../inc/dbconn.inc.php";
 
-        $sql = "SELECT * FROM factory_logs";
+        $sql = "SELECT * FROM factory_logs LIMIT 25";
         $result = $conn->query($sql);
 
         if (!$result) {
