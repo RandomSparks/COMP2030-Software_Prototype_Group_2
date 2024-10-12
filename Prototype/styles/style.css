@@ -358,18 +358,6 @@ body {
     font-size: 20px;
 }
 
-
-
-.div_content {
-    display: flex;
-    position: absolute;
-    top: 110px;
-    left: 220px;
-    width: calc(100vw - 220px);
-    height: calc(100vh - 150px);
-    flex-direction: column;
-}
-
 #div_info {
     background-color: rgb(228, 228, 228);
     display: flex;
@@ -383,6 +371,33 @@ body {
     border-top: solid black 1px;
 }
 
+
+.div_content {
+    display: flex;
+    position: absolute;
+    top: 110px;
+    left: 220px;
+    width: calc(100vw - 220px);
+    height: calc(100vh - 150px);
+    flex-direction: column;
+}
+
+.div_content {
+    display: flex;
+    position: absolute;
+    top: 110px;
+    left: 220px;
+    width: calc(100vw - 220px);
+    height: calc(100vh - 150px);
+    flex-direction: column;
+}
+
+#content_title {
+    height: 50px;
+    font-size: 30px;
+    font-weight: bold;
+    text-wrap: nowrap;
+}
 
 
 /* Ensure the main content is displayed as a flex container */
