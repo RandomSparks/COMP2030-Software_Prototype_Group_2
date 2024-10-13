@@ -20,7 +20,7 @@
             <h1 id="content_title">
                 Welcome to the [Company Name] Smart Manufacturing Dashboard, Hiroshi.
             </h1>
-            <p>
+            <p id="content_p">
                 This Dashboard will allow to view factory statuses, production information, performance metrics, and any factory alerts.
                 You can also edit accounts, assign jobs, and machines, manage job information and read reports from production operators. <br>
                 <br>

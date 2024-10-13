@@ -392,12 +392,25 @@ body {
     flex-direction: column;
 }
 
-#content_title {
+.div_content#content_title {
+    display: flex;
+    position: absolute;
     height: 50px;
     font-size: 30px;
     font-weight: bold;
-    text-wrap: nowrap;
+    top: 25px;
+    left: 15px;
 }
+
+.div_content#content_p {
+    display: flex;
+    position: absolute;
+    height: 50px;
+    font-size: 30px;
+    top: 35px;
+    left: 15px;
+}
+
 
 
 /* Ensure the main content is displayed as a flex container */
