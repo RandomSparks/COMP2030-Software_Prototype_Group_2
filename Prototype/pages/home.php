@@ -22,8 +22,9 @@
             </h1>
             <p id="content_p">
                 This Dashboard will allow to view factory statuses, production information, performance metrics, and any factory alerts.
-                You can also edit accounts, assign jobs, and machines, manage job information and read reports from production operators. <br>
-                <br>
+                You can also edit accounts, assign jobs, and machines, manage job information and read reports from production operators.
+            </p>
+            <p id="content_p2">
                 You may also configure your personal settings, request support, or log out of your account.
             </p>
         </div>

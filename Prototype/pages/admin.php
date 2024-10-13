@@ -16,10 +16,33 @@
         require_once "../inc/sidebar.php"; 
         require_once "../inc/header.php";
         ?>
-        <div class="div_content">
-            <p>
-                Hi, I am an Albanian virus but because of poor technology in my country unfortunately I am not able to harm your computer. Please be so kind to delete one of your important files yourself and then forward me other users. Many thanks for your cooperation! Best regards, Albanian virus.
-            </p>
+        <div class="div_content" id="content_admin">
+        <p>
+        What whould you like to manage?
+        </p>
+        <ul>
+            <li>
+                <a href="./jobs.php">
+                    <button id="button_jobs">
+                    Jobs
+                    </button>
+                </a>
+            </li>
+            <li>
+                <a href="./machines.php">
+                    <button id="button_machines">
+                    Machines
+                    </button>
+                </a>
+            </li>
+            <li>
+                <a href="./users.php">
+                    <button id="button_users">
+                    Users
+                    </button>
+                </a>
+            </li>        
+        </ul>
         </div>
     </main>
     <footer>
