@@ -18,7 +18,7 @@
         ?>
         <div class="div_content" id="content_admin">
         <p>
-        What whould you like to manage?
+        What would you like to manage?
         </p>
         <ul>
             <li>
