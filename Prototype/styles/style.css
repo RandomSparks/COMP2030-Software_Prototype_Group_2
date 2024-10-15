@@ -426,17 +426,55 @@ body {
     align-items: center;
 }
 
-#button_jobs {
-
+#content_admin ul li{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    height: 150px;
+    width: 400px;
+    margin-bottom: 20px;
 }
 
-#button_machines {
-
+#content_admin ul li a {
+ text-decoration: none;
 }
 
-#button_users {
-
+#content_admin ul li a button:hover{
+    color: rgb(255, 255, 255);
+    background-color: rgb(106, 106, 221)
 }
+
+#content_admin ul li a button{
+    display: flex;
+    position: relative;
+    width: 250px;
+    height: 85px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border-radius: 40px;
+    border: 3px solid rgb(0, 0, 0);
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+#content_admin ul li img{
+    display: flex;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 25px;
+}
+
+#p_admin {
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
 
 
 

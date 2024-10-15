@@ -17,32 +17,41 @@
         require_once "../inc/header.php";
         ?>
         <div class="div_content" id="content_admin">
-        <p>
-        What would you like to manage?
-        </p>
-        <ul>
-            <li>
-                <a href="./jobs.php">
-                    <button id="button_jobs">
-                    Jobs
-                    </button>
-                </a>
-            </li>
-            <li>
-                <a href="./machines.php">
-                    <button id="button_machines">
-                    Machines
-                    </button>
-                </a>
-            </li>
-            <li>
-                <a href="./users.php">
-                    <button id="button_users">
-                    Users
-                    </button>
-                </a>
-            </li>        
-        </ul>
+            <p id="p_admin">
+            What would you like to manage?
+            </p>
+            <ul>
+                <li>
+                    <a href="./alerts.php">
+                    <img src="../images/placeholder.jpg" alt="Alerts">
+                    </a>
+                    <a href="./jobs.php">
+                        <button>
+                        Jobs
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a href="./machines.php">
+                    <img src="../images/placeholder.jpg" alt="Machines">
+                    </a>
+                    <a href="./machines.php">
+                        <button>
+                        Machines
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a href="./maintenance.php">
+                    <img src="../images/placeholder.jpg" alt="User">
+                    </a>
+                    <a href="./users.php">
+                        <button>
+                        Users
+                        </button>
+                    </a>
+                </li>        
+            </ul>
         </div>
     </main>
     <footer>
