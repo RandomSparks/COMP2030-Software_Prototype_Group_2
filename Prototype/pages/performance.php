@@ -74,9 +74,7 @@
         </div>
     </main>
     <footer>
-        <div id="div_info">
             <?php require_once "../inc/info.php"; ?>
-        </div>
     </footer>
 </body>
 
