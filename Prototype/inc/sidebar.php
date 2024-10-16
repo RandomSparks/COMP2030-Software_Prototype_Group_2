@@ -17,12 +17,6 @@
             </a>
         </li>
         <li>
-            <img src="../images/placeholder.jpg" alt="production">
-            <a href="production.php">
-                Production
-            </a>
-        </li>
-        <li>
             <img src="../images/placeholder.jpg" alt="performance">
             <a href="performance.php">
                 Performance
@@ -38,12 +32,6 @@
             <img src="../images/placeholder.jpg" alt="administation">
             <a href="admin.php">
                 Administation
-            </a>
-        </li>
-        <li>
-            <img src="../images/placeholder.jpg" alt="maintenance">
-            <a href="maintenance.php">
-                Maintenance
             </a>
         </li>
         <li>
