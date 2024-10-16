@@ -38,7 +38,7 @@ body {
     top: 20px;
     left: 85px;
     width: 160px;
-    text-wrap: wrap;
+    white-space: normal;
     position: absolute;
     color: black;
     text-decoration: none;
@@ -254,7 +254,7 @@ body {
 }
 #ul_menu a:hover, #ul_support_settings a:hover{
     color: white;
-    background-color: rgb(3, 0, 161);
+    background-color: rgb(64, 61, 255);
     text-decoration: underline;
 }
 #ul_menu li img, #ul_support_settings li img{
@@ -336,7 +336,7 @@ body {
 }
 
 #div_header {
-    background-color: rgb(228, 228, 228);
+    background-color: rgb(239, 239, 239);
     display: flex;
     justify-content: right;
     align-items: center;
@@ -379,7 +379,7 @@ body {
 }
 
 #div_info {
-    background-color: rgb(228, 228, 228);
+    background-color: rgb(239, 239, 239);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -457,11 +457,12 @@ body {
 
 #content_admin ul li a {
  text-decoration: none;
+ padding: 5px;
 }
 
 #content_admin ul li a button:hover{
     color: rgb(255, 255, 255);
-    background-color: rgb(3, 0, 161);
+    background-color: rgb(64, 61, 255);
 }
 
 #content_admin ul li a button{
@@ -470,7 +471,7 @@ body {
     width: 250px;
     height: 85px;
     color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
+    background-color:rgb(184, 184, 184);
     border-radius: 40px;
     border: 3px solid rgb(0, 0, 0);
     cursor: pointer;
@@ -478,6 +479,7 @@ body {
     align-items: center;
     font-size: 35px;
     font-weight: bold;
+    box-shadow: 3px 3px 3px black;
 }
 
 #content_admin ul li img{
@@ -485,6 +487,8 @@ body {
     position: relative;
     width: 100px;
     height: 100px;
+    border: solid black 1px;
+    box-shadow: 2px 2px 2px black; 
     border-radius: 50%;
     margin-right: 25px;
 }
