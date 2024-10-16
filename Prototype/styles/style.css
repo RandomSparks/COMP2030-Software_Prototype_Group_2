@@ -250,11 +250,11 @@ body {
     align-items: center;
     height: 50px;
     margin-left: 10px;
-    
+    margin-top: 20px;
 }
 #ul_menu a:hover, #ul_support_settings a:hover{
-    text-decoration: underline;
-    color: rgb(106, 106, 221);
+    color: white;
+    background-color: rgb(3, 0, 161);
 }
 #ul_menu li img, #ul_support_settings li img{
     width: 30px;
@@ -262,16 +262,24 @@ body {
     border-radius: 50%;
 }
 #ul_menu li a{
-    font-size: 16px;
-    margin-left: 30px;
+    display: flex;
+    font-size: 20px;
+    margin-left: 20px;
     font-weight: 500;
     text-decoration: none;
     color: black;
     cursor: pointer;
+    border: solid black 1px;
+    border-radius: 20px;
+    height: 40px;
+    width: 145px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.719);
 }
 
 #ul_support_settings {
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 #div_logout {
@@ -290,12 +298,20 @@ body {
     border-radius: 50%;
 }
 #div_logout a{
+    display: flex;
     font-size: 16px;
-    margin-left: 30px;
+    margin-left: 20px;
     font-weight: bold;
     text-decoration: none;
     color: black;
     cursor: pointer;
+    border: solid black 1px;
+    border-radius: 20px;
+    height: 30px;
+    width: 95px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.719);
 }
 
 #div_info {
@@ -308,7 +324,8 @@ body {
 }
 #div_logout a:hover{
     text-decoration: underline;
-    color: red;
+    color: white;
+    background-color: rgb(156, 0, 0);
 }
 
 #ul_menu a.selected {
@@ -441,7 +458,7 @@ body {
 
 #content_admin ul li a button:hover{
     color: rgb(255, 255, 255);
-    background-color: rgb(106, 106, 221)
+    background-color: rgb(3, 0, 161);
 }
 
 #content_admin ul li a button{
