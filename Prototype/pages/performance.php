@@ -12,9 +12,6 @@
 </head>
 
 <body>
-    <header>
-
-    </header>
     <main id="performance-main">
         <?php require_once "../inc/sidebar.php";
         require_once "../inc/header.php";
@@ -78,7 +75,7 @@
     </main>
     <footer>
         <div id="div_info">
-            <a href="">Info</a>
+            <?php require_once "../inc/info.php"; ?>
         </div>
     </footer>
 </body>

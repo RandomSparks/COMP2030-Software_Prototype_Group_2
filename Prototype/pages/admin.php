@@ -10,7 +10,6 @@
     <script src="../scripts/script.js" defer></script>
 </head>
 <body>
-
     <main id="admin-main">
         <?php 
         require_once "../inc/sidebar.php"; 

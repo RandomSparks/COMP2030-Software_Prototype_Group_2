@@ -287,16 +287,16 @@ body {
     display: flex;
     align-items: center;
     height: 40px;
-    margin-left: 10px;
-    opacity: .4;
     position: fixed;
-    bottom: 10px;
+    bottom: 0px;
     background-color: rgb(207, 206, 206);
+    padding-right: 61px;
 }
 #div_logout img{
     width: 30px;
     height: 30px;
     border-radius: 50%;
+    margin-left: 15px;
 }
 #div_logout a{
     display: flex;
@@ -387,8 +387,9 @@ body {
     width: calc(100vw - 220px);
     position: absolute;
     bottom: 0;
-    left: 220px;
+    left: 219px;
     border-top: solid black 1px;
+    border-left: solid black 1px;
 }
 
 
@@ -470,15 +471,15 @@ body {
     position: relative;
     width: 250px;
     height: 85px;
-    color: rgb(0, 0, 0);
-    background-color:rgb(184, 184, 184);
-    border-radius: 40px;
-    border: 3px solid rgb(0, 0, 0);
     cursor: pointer;
     justify-content: center;
     align-items: center;
     font-size: 35px;
     font-weight: bold;
+    color: rgb(0, 0, 0);
+    background-color:rgb(207, 206, 206);
+    border-radius: 40px;
+    border: 3px solid rgb(0, 0, 0);
     box-shadow: 3px 3px 3px black;
 }
 
@@ -513,15 +514,12 @@ body {
 }
 
 /* Style the performance table container */
-#perf_table {
-    flex: 1; /* Take up the remaining space */
-    overflow: auto;
-}
 
 /* Style the table */
 #factory_logs_table {
     width: 100%;
     border-collapse: collapse;
+    height: 100%;
 }
 
 #factory_logs_table th, #factory_logs_table td {
