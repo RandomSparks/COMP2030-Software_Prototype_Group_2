@@ -17,6 +17,12 @@
             </a>
         </li>
         <li>
+            <img src="../images/placeholder.jpg" alt="administation">
+            <a href="admin.php">
+                Administation
+            </a>
+        </li>
+        <li>
             <img src="../images/placeholder.jpg" alt="performance">
             <a href="performance.php">
                 Performance
@@ -26,12 +32,6 @@
             <img src="../images/placeholder.jpg" alt="alerts">
             <a href="alerts.php">
                 Alerts
-            </a>
-        </li>
-        <li>
-            <img src="../images/placeholder.jpg" alt="administation">
-            <a href="admin.php">
-                Administation
             </a>
         </li>
         <li>
