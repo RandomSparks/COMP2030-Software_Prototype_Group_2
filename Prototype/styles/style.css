@@ -255,6 +255,7 @@ body {
 #ul_menu a:hover, #ul_support_settings a:hover{
     color: white;
     background-color: rgb(3, 0, 161);
+    text-decoration: underline;
 }
 #ul_menu li img, #ul_support_settings li img{
     width: 30px;
@@ -300,7 +301,7 @@ body {
 #div_logout a{
     display: flex;
     font-size: 16px;
-    margin-left: 20px;
+    margin-left: 35px;
     font-weight: bold;
     text-decoration: none;
     color: black;
@@ -330,6 +331,8 @@ body {
 
 #ul_menu a.selected {
     font-weight: bold;
+    background-color: rgb(3, 0, 161);
+    color: white;
 }
 
 #div_header {
