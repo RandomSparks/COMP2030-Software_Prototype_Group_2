@@ -57,7 +57,7 @@
                             echo '<td>' . htmlspecialchars($row["name"]) . '</td>';
                             echo '<td>' . htmlspecialchars($row["content"]) . '</td>';
                             echo '<td>' . htmlspecialchars($row["machine_name"]) . '</td>';
-                            echo '<td> <a href="notes.php?id=' . $row["id"] . '&type=edit">Edit</a> <a href="managenote.php?id=' . $row["id"] . '&type=delete">Delete</a> </td>';
+                            echo '<td> <a href="managenote.php?id=' . $row["id"] . '&type=edit">Edit</a> <a href="managenote.php?id=' . $row["id"] . '&type=delete">Delete</a> </td>';
                             echo '</tr>';
                         }
                         echo '</tbody>';
@@ -66,70 +66,26 @@
                         mysqli_free_result($result);
                     }
                 }
-
-                if (isset($_GET["type"]) && $_GET["type"] == "edit") {
-                    $id = htmlspecialchars($_GET["id"]);
-                    $sql = "SELECT id, name, content, machine_name FROM Notes WHERE id = ?;";
-                    $statement = mysqli_stmt_init($conn);
-                    mysqli_stmt_prepare($statement, $sql);
-                    mysqli_stmt_bind_param($statement, "i", $id);
-                    mysqli_stmt_execute($statement);
-                    $result = mysqli_stmt_get_result($statement);
-                    $note = mysqli_fetch_assoc($result);
-                    mysqli_stmt_close($statement);
-
-                    if ($note) {
-                        echo "<h3>Edit Note</h3>";
-                        echo '<form action="managenote.php" method="post" id="form_editnote">';
-                        echo '<input type="hidden" name="id" value="' . $note["id"] . '">';
-                        echo '<label for="name">Edit Name:</label>';
-                        echo '<input type="text" name="name" id="name" value="' . htmlspecialchars($note["name"]) . '" required>';
-                        echo '<label for="content">Edit Content:</label>';
-                        echo '<textarea name="content" id="textarea_editnote" required>' . htmlspecialchars($note["content"]) . '</textarea>';
-                        echo '<label for="machine_name">Edit Machine:</label>';
-                        echo '<select name="machine_name" id="machine_name" required>';
-                        $machines = [
-                            'CNC Machine', '3D Printer', 'Industrial Robot', 'Automated Guided Vehicle (AGV)',
-                            'Smart Conveyor System', 'IoT Sensor Hub', 'Predictive Maintenance System',
-                            'Automated Assembly Line', 'Quality Control Scanner', 'Energy Management System'
-                        ];
-                        foreach ($machines as $machine) {
-                            $selected = $note["machine_name"] == $machine ? 'selected' : '';
-                            echo '<option value="' . $machine . '" ' . $selected . '>' . $machine . '</option>';
-                        }
-                        echo '</select>';
-                        echo '<button type="submit" name="update_note">Update Note</button>';
-                        echo '</form>';
-                        echo '<a href="notes.php"><button>Cancel</button></a>';
-                    } 
-                    else {
-                        echo "Note not found!";
-                    }
-                } 
-                else{
-                    echo "<h3>Create Note</h3>";
-                    echo "<form action='managenote.php' method='POST' id='form_createnote'>";
-                    echo "<input type='hidden' name='type' value='create'>";
-                    echo "<label for='name'>Note Name:</label>";
-                    echo "<input type='text' name='name' id='name' placeholder='Note Name' maxlength='50' required>";
-                    echo "<label for='content'>Note Content:</label>";
-                    echo "<textarea name='content' id='textarea_createnote' placeholder='Note Content' maxlength='100'></textarea>";
-                    echo "<label for='machine_name'>Machine Name:</label>";
-                    echo "<select name='machine_name' id='machine_name' required>";
-                    $machines = [
-                        'CNC Machine', '3D Printer', 'Industrial Robot', 'Automated Guided Vehicle (AGV)',
-                        'Smart Conveyor System', 'IoT Sensor Hub', 'Predictive Maintenance System',
-                        'Automated Assembly Line', 'Quality Control Scanner', 'Energy Management System'
-                    ];
-                    foreach ($machines as $machine) {
-                        echo "<option value='$machine'>$machine</option>";
-                    }
-                    echo "</select>";
-                    echo "<button type='submit'>Create Note</button>";
-                    echo "</form>";
-                }
                 mysqli_close($conn);
             ?>
+            <form action='managenote.php' method='POST' id="form_createnote">
+                <input type="hidden" name="type" value="create">
+                <input type='text' name='name' placeholder='Note Name' maxlength="50" required>
+                <textarea name="content" id="textarea_createnote" placeholder="Note Content" maxlength="100"></textarea>
+                <select name='machine_name' required>
+                    <option value='CNC Machine'>CNC Machine</option>
+                    <option value='3D Printer'>3D Printer</option>
+                    <option value='Industrial Robot'>Industrial Robot</option>
+                    <option value='Automated Guided Vehicle (AGV)'>Automated Guided Vehicle (AGV)</option>
+                    <option value='Smart Conveyor System'>Smart Conveyor System</option>
+                    <option value='IoT Sensor Hub'>IoT Sensor Hub</option>
+                    <option value='Predictive Maintenance System'>Predictive Maintenance System</option>
+                    <option value='Automated Assembly Line'>Automated Assembly Line</option>
+                    <option value='Quality Control Scanner'>Quality Control Scanner</option>
+                    <option value='Energy Management System'>Energy Management System</option>
+                </select>
+                <button type="submit">Create Note</button>
+            </form>
         </div>
     </main>
     <footer>
