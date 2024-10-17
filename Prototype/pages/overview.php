@@ -15,11 +15,58 @@
         require_once "../inc/sidebar.php"; 
         require_once "../inc/header.php";
         ?>
+        
         <div class="div_content">
-            <p>
-                **Overview**
-            </p>        
+            <div class="overview_title">
+                <h2>
+                    **Overview**
+                </h2>
+                <img src="../images/companyNameIcon.png" alt="CompanyNameIcon">
+            </div>
+        
+            <div class="machine_info">
+                <h3>Machine Information</h3>
+                <?php
+                require_once "../inc/dbconn.inc.php";
+
+                $sql = "SELECT timestamp, machine_name, temperature FROM factory_logs LIMIT 25";
+                $result = $conn->query($sql);
+
+                if (!$result) {
+                    echo "Error: " . $conn->error;
+                    exit;
+                }
+
+                if ($result->num_rows > 0) {
+                    echo '<table id="machine_temperature_table">';
+                    echo '<thead>';
+                    echo '<tr>';
+                    echo '<th>Timestamp</th>';
+                    echo '<th>Machine Name</th>';
+                    echo '<th>Temperature</th>';
+                    echo '</tr>';
+                    echo '</thead>';
+                    echo '<tbody>';
+                    
+                    while ($row = $result->fetch_assoc()) {
+                        echo '<tr>';
+                        echo '<td>' . $row["timestamp"] . '</td>';
+                        echo '<td>' . $row["machine_name"] . '</td>';
+                        echo '<td>' . $row["temperature"] . '</td>';
+                        echo '</tr>';
+                    }
+                    
+                    echo '</tbody>';
+                    echo '</table>';
+                } else {
+                    echo "No records found.";
+                }
+
+                $conn->close();
+                ?>
+            </div>
         </div>
+
     </main>
     <footer>
         <?php require_once "../inc/info.php"; ?>

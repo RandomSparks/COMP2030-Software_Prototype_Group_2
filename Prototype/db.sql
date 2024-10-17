@@ -25,7 +25,7 @@ CREATE TABLE factory_logs (
 );
 
 -- Load data from the CSV file into the factory_logs table
-LOAD DATA INFILE '"C:/Users/patz1/Documents/factory_logs.csv"'
+LOAD DATA INFILE '/Applications/XAMPP/xamppfiles/htdocs/www/COMP2030-Software_Prototype_Group_2/factory_logs.csv'
 INTO TABLE factory_logs
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
