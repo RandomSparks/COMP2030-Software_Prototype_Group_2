@@ -70,8 +70,8 @@
             ?>
             <form action='managenote.php' method='POST' id="form_createnote">
                 <input type="hidden" name="type" value="create">
-                <input type='text' name='name' placeholder='Note Name' required>
-                <textarea name="content" id="textarea_createnote" placeholder="Note Content"></textarea>
+                <input type='text' name='name' placeholder='Note Name' maxlength="50" required>
+                <textarea name="content" id="textarea_createnote" placeholder="Note Content" maxlength="20"></textarea>
                 <select name='machine_name' required>
                     <option value='CNC Machine'>CNC Machine</option>
                     <option value='3D Printer'>3D Printer</option>
