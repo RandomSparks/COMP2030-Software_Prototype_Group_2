@@ -32,7 +32,7 @@
                 A system admin will send you your new password as soon as possible.
             </p>
             <hr>
-            <form action="login.php" method="post">
+            <form action="../index.php" method="GET">
                 <ul>
                     <li>
                         <label for="username">USERNAME*</label>
