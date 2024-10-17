@@ -553,7 +553,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-left: 100px;
+    margin-left: 150px;
     margin-top: 20px;
 }
 .div_content .overview_title img{
@@ -601,7 +601,26 @@ body {
     align-items: center;
     text-align: center;
     flex-direction: column;
-    margin-left: 80px;
+    margin-left: 130px;
     max-width: 250px;
     border: solid black 1px;
+}
+.div_content .overview_wrapper {
+    position: fixed;
+    left: 630px;
+    display: flex;
+    width: 650px;
+    height: 400px;
+    flex-wrap: wrap;
+}
+.div_content .overview_wrapper .analytics_box{
+    width: 250px;
+    height: 160px;
+    border: solid black 1px;
+    margin: 10px;
+    text-align: center;
+}
+.div_content .overview_wrapper .analytics_box h3, .div_content .machine_info h3{
+    text-decoration: underline;
+    margin-top: 3px;
 }
