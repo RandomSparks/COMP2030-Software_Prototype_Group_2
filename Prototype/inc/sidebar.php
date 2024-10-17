@@ -29,22 +29,13 @@
             </a>
         </li>
         <li>
-            <img src="../images/alertsIcon.png" alt="alerts">
-            <a href="alerts.php">
-                Alerts
-            </a>
-        </li>
-        <li>
-            <img src="../images/reportingIcon.png" alt="reporting">
-            <a href="reporting.php">
-                Reporting
-            <img src="../images/placeholder.jpg" alt="notes">
+            <img src="../images/reportingIcon.png" alt="notes">
             <a href="notes.php">
                 Notes
             </a>
         </li>
         <li>
-            <img src="../images/placeholder.jpg" alt="summary">
+            <img src="../images/productionIcon.png" alt="summary">
             <a href="summary.php">
                 Summary
             </a>
