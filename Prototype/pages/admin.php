@@ -22,7 +22,7 @@
             <ul>
                 <li>
                     <a href="./alerts.php">
-                    <img src="../images/placeholder.jpg" alt="Alerts">
+                    <img src="../images/jobsIcon.png" alt="Alerts">
                     </a>
                     <a href="./jobs.php">
                         <button>
@@ -32,7 +32,7 @@
                 </li>
                 <li>
                     <a href="./machines.php">
-                    <img src="../images/placeholder.jpg" alt="Machines">
+                    <img src="../images/machinesIcon.png" alt="Machines">
                     </a>
                     <a href="./machines.php">
                         <button>
@@ -42,7 +42,7 @@
                 </li>
                 <li>
                     <a href="./maintenance.php">
-                    <img src="../images/placeholder.jpg" alt="User">
+                    <img src="../images/usersIcon.png" alt="User">
                     </a>
                     <a href="./users.php">
                         <button>

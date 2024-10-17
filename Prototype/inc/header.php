@@ -7,5 +7,5 @@
             Factory Manager
         </p>
     </div>
-    <img src="../images/placeholder.jpg" alt="Profile_Picture">
+    <img src="../images/companyNameIcon.png" alt="Profile_Picture">
 </div>
