@@ -12,7 +12,7 @@
     <header class="landing_header">
         <div>
             <img src="images\placeholder.jpg" alt="Logo">
-            <a href="./index.php">Company Name</a>
+            <a href="./index.php">SMB Dashboard</a>
         </div>
         <ul>
             <li class="title">
