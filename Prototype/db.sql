@@ -65,3 +65,15 @@ INSERT INTO Notes(name, content, machine_name) VALUES('Note from Production Oper
 INSERT INTO Notes(name, content, machine_name) VALUES('Note from PO Jeremy', 'Can someone let Belic know that ive turned his CNC off for the moment to fix the printer? Thanks.', '3D Printer');
 
 -- Insert machine names from factory_logs into Notes table
+
+CREATE TABLE jobs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    job_name VARCHAR(255) NOT NULL,
+    job_completed BOOLEAN DEFAULT FALSE,
+    date_started DATE NOT NULL,
+    date_completed DATE DEFAULT NULL,
+    job_allocated VARCHAR(255),
+    job_description TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
