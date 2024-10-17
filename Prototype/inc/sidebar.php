@@ -29,15 +29,15 @@
             </a>
         </li>
         <li>
-            <img src="../images/placeholder.jpg" alt="alerts">
-            <a href="alerts.php">
-                Alerts
+            <img src="../images/placeholder.jpg" alt="notes">
+            <a href="notes.php">
+                Notes
             </a>
         </li>
         <li>
-            <img src="../images/placeholder.jpg" alt="reporting">
-            <a href="reporting.php">
-                Reporting
+            <img src="../images/placeholder.jpg" alt="summary">
+            <a href="summary.php">
+                Summary
             </a>
         </li>
         <div id="ul_support_settings">
