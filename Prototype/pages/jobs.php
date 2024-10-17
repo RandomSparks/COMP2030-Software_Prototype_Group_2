@@ -98,7 +98,7 @@ $conn->close();
                 </div>
             <?php endif; ?>
 
-            <table border="1" cellpadding="10">
+            <table border = "1" cellpadding="10">
                 <tr>
                     <th>Job Title</th>
                     <th>Date Started</th>
