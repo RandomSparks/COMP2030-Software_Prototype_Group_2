@@ -96,7 +96,7 @@
                 echo '<select name="role_id" required>';
                 $roles = ['Administrator', 'Manager', 'Operator', 'Auditor'];
                 foreach ($roles as $role) {
-                    echo '<option value=' . $role . '>' . $role . '</option>';
+                    echo "<option value=" . $role . ">" . $role . "</option>";
                 }
                 echo '</select>';
                 echo '<button type="submit" name="add_user">Add User</button>';
