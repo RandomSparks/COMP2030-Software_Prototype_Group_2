@@ -63,6 +63,8 @@ CREATE TABLE Notes(
 -- Insert example notes
 INSERT INTO Notes(name, content, machine_name) VALUES('Note from Production Operator Belic', 'The CNC is machine is running into some issues, we need someone to come and fix it pronto', 'CNC Machine');
 INSERT INTO Notes(name, content, machine_name) VALUES('Note from PO Jeremy', 'Can someone let Belic know that ive turned his CNC off for the moment to fix the printer? Thanks.', '3D Printer');
+INSERT INTO Notes(name, content, machine_name) VALUES('Note Farmers Union Iced Coffee', 'I like the strong version of the coffee', 'Automated Assembly Line');
+INSERT INTO Notes(name, content, machine_name) VALUES('Note from PO Bob', 'Sorry about the above note, I didn''t mean to press send and I forgot which button I have to press to delete it.', 'Automated Assembly Line');
 
 -- Insert machine names from factory_logs into Notes table
 
