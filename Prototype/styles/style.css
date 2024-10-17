@@ -555,13 +555,14 @@ body {
     flex-direction: column;
     margin-left: 150px;
     margin-top: 20px;
+    font-size: 16px;
 }
 .div_content .overview_title img{
     object-fit: cover;
     border-radius: 50%;
-    height: 150px;
-    width: 150px;
-    margin-top: 20px;
+    height: 113px;
+    width: 113px;
+    margin-top: 10px;
     margin-bottom: 20px;
 }
 .div_content .utilization_section {
@@ -604,23 +605,30 @@ body {
     margin-left: 130px;
     max-width: 250px;
     border: solid black 1px;
+    width: 250px;
+    max-width: 250px;
+    height: 160px;
 }
 .div_content .overview_wrapper {
-    position: fixed;
-    left: 630px;
+    position: fixed; 
+    left: 620px;
     display: flex;
     width: 650px;
-    height: 400px;
+    height: auto;
     flex-wrap: wrap;
 }
 .div_content .overview_wrapper .analytics_box{
     width: 250px;
+    max-width: 250px;
     height: 160px;
     border: solid black 1px;
     margin: 10px;
     text-align: center;
+    font-size: 12px;
 }
 .div_content .overview_wrapper .analytics_box h3, .div_content .machine_info h3{
     text-decoration: underline;
     margin-top: 3px;
+    font-size: 18px;
+    margin-bottom: 4px;
 }
