@@ -38,7 +38,7 @@
                     }
                     echo "</h2>";
                     mysqli_free_result($count_result);
-                }   
+                } 
 
                 if ($result = mysqli_query($conn, $sql)) {
                     if (mysqli_num_rows($result) > 0) {

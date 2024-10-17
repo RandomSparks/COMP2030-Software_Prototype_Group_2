@@ -63,7 +63,6 @@ require_once "../inc/dbconn.inc.php";
                     mysqli_stmt_bind_param($statement, "i", $id);
                     if (mysqli_stmt_execute($statement)) {
                         header("Location: notes.php");
-                        exit();
                     } 
                     
                     else {
@@ -89,7 +88,6 @@ require_once "../inc/dbconn.inc.php";
                 mysqli_stmt_bind_param($statement, "sss", $name, $content, $machine_name);
                 if (mysqli_stmt_execute($statement)) {
                     header("Location: notes.php");
-                    exit();
                 } else {
                     echo "An error occurred: " . mysqli_error($conn);
                 }
@@ -110,7 +108,6 @@ require_once "../inc/dbconn.inc.php";
                 mysqli_stmt_bind_param($statement, "sssi", $name, $content, $machine_name, $id);
                 if (mysqli_stmt_execute($statement)) {
                     header("Location: notes.php");
-                    exit();
                 } else {
                     echo "An error occurred: " . mysqli_error($conn);
                 }
