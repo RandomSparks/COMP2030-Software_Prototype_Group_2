@@ -62,13 +62,10 @@
                     } else {
                         echo "No records found.";
                     }
-
-                    // $conn->close();
                     ?>
                 </div>
 
             </div>
-            <!-- Grid of 4 analytics -->
             <div class="overview_wrapper">
                 <div class="analytics_box">
                     <h3>Machine Pressure</h3>
@@ -105,8 +102,6 @@
                         } else {
                             echo "No records found.";
                         }
-                        
-                        // $conn->close();
                     ?>
                 </div>
                 <div class="analytics_box">
@@ -144,8 +139,6 @@
                         } else {
                             echo "No records found.";
                         }
-                        
-                        // $conn->close();
                     ?>
                 </div>
                 <div class="analytics_box">
