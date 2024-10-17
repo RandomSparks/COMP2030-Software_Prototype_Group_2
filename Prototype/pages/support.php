@@ -17,7 +17,8 @@
         ?>
         <div class="div_content">
             <p>
-                **Support**
+                Thank you! Your support request has been submitted. We will get back to you as soon as possible.
+                
             </p>        
         </div>
     </main>
