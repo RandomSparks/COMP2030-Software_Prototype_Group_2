@@ -20,13 +20,13 @@
             <?php
                 require_once "../inc/dbconn.inc.php";
 
-                $sql = "SELECT name, content, machine_name FROM Notes;";
+                $sql = "SELECT id, name, content, machine_name FROM Notes;";
 
                 $countsql = "SELECT COUNT(*) as count FROM Notes;";
 
                 if($count_result = mysqli_query($conn, $countsql)){
                     $numnote = mysqli_fetch_assoc($count_result);
-                    echo "<h2 id='note_count'>";
+                    echo "<h2 id='notes_count'>";
                     if($numnote['count'] > 1){
                         echo "{$numnote['count']} notes";
                     }
@@ -45,17 +45,26 @@
                         echo '<table id="notes_table">';
                         echo '<thead>';
                         echo '<tr>';
-                        echo '<th>Note ID:</th>';
                         echo '<th>Summary:</th>';
                         echo '<th>Note Contents:</th>';
                         echo '<th>Machine Name:</th>';
+                        echo '<th>Note Management:</th>';
                         echo '</tr>';
                         echo '</thead>';
                         echo '<tbody>';
-
                         while($row = mysqli_fetch_assoc($result)){
-                            echo "<li class='notes_list_item'> {$row['name']} </li>";
-                        } echo "</table>";
+                            
+                            echo '<td>' . $row["name"] . '</td>';
+                            echo '<td>' . $row["content"] . '</td>';
+                            echo '<td>' . $row["machine_name"] . '</td>';
+                            echo '<td> <a href="editnote.php?id=' . $row["id"] . '">Edit</a><a href="deletenote.php?id=' . $row["id"] . '">Delete</a> </td>';
+                            echo '</tr>';
+                        }
+                        echo '<tr>';
+                        echo "<td><button></button></td>";
+                        echo '</tr>';
+                        echo '</tbody>';
+                        echo "</table>";
                         
                         mysqli_free_result($result);
                     }
