@@ -17,7 +17,50 @@
         require_once "../inc/header.php";
         ?>
         <div class="div_content">
-            
+            <?php
+                require_once "../inc/dbconn.inc.php";
+
+                $sql = "SELECT name, content, machine_name FROM Notes;";
+
+                $countsql = "SELECT COUNT(*) as count FROM Notes;";
+
+                if($count_result = mysqli_query($conn, $countsql)){
+                    $numnote = mysqli_fetch_assoc($count_result);
+                    echo "<h2 id='note_count'>";
+                    if($numnote['count'] > 1){
+                        echo "{$numnote['count']} tasks";
+                    }
+                    else if($numtask['count'] > 0){
+                        echo "{$numnote['count']} task";
+                    }
+                    else {
+                        echo "No tasks";
+                    }
+                    echo "</h2>";
+                    mysqli_free_result($count_result);
+                }   
+
+                if($result = mysqli_query($conn, $sql)){
+                    if(mysqli_num_rows($result) > 0){
+                        echo '<table id="notes_table">';
+                        echo '<thead>';
+                        echo '<tr>';
+                        echo '<th>Note ID:</th>';
+                        echo '<th>Summary:</th>';
+                        echo '<th>Note Contents:</th>';
+                        echo '<th>Machine Name:</th>';
+                        echo '</tr>';
+                        echo '</thead>';
+                        //echo '<tbody>';
+
+                        while($row = mysqli_fetch_assoc($result)){
+                       //     echo "<li><a href='complete.php?id={$row['id']}' class='task_list_item'> {$row['name']} </a></li>";
+                        } echo "</table>";
+                        mysqli_free_result($result);
+                    }
+                }
+                mysqli_close($conn);
+            ?>
         </div>
     </main>
     <footer>
