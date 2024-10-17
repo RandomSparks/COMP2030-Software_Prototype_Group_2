@@ -260,7 +260,6 @@ body {
 #ul_menu li img, #ul_support_settings li img{
     width: 30px;
     height: 30px;
-    border-radius: 50%;
 }
 #ul_menu li a{
     display: flex;
@@ -295,7 +294,6 @@ body {
 #div_logout img{
     width: 30px;
     height: 30px;
-    border-radius: 50%;
     margin-left: 15px;
 }
 #div_logout a{
