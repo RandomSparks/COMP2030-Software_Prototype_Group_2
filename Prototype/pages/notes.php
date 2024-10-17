@@ -11,16 +11,13 @@
     <script src="../scripts/script.js" defer></script>
 </head>
 <body>
-
     <main id="notes-main">
         <?php 
         require_once "../inc/sidebar.php"; 
         require_once "../inc/header.php";
         ?>
         <div class="div_content">
-            <p>
-                **Notes**
-            </p>        
+            
         </div>
     </main>
     <footer>

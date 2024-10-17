@@ -1,7 +1,7 @@
 <div id="div_sidebar">
     <div id="div_logo">
-        <img src="../images/companyNameIcon.png" alt="Logo">
-        <h1>Company Name</h1>
+        <img src="../images/placeholder.jpg" alt="Logo">
+        <h1>SMB Dashboard</h1>
     </div>
     <ul id="ul_menu">
         <li>

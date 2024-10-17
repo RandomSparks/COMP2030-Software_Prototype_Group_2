@@ -199,7 +199,7 @@ body {
 }
 
 #div_sidebar {
-    background-color: rgb(255, 255, 255); /* rgb(207, 206, 206); */
+    background-color: rgb(207, 206, 206);
     border-right: solid black 1px;
     width: 220px;
     position: relative;
@@ -225,11 +225,11 @@ body {
 #div_logo img {
     width: 50px;
     height: 50px;
-    top: 3px;
+    top: 5px;
     left: 0px;
     border-radius: 50%;
     border: solid black 1px;
-    box-shadow: 1px 1px 1px black;
+    box-shadow: 2px 2px 2px black;
     position: absolute;
     object-fit: contain;
 }
@@ -248,11 +248,9 @@ body {
 #ul_menu li, #ul_support_settings li{
     display: flex;
     align-items: center;
-    height: 40px;
+    height: 50px;
     margin-left: 10px;
-}
-#ul_support_settings{
-    margin-top: 50px;
+    margin-top: 10px;
 }
 #ul_menu a:hover, #ul_support_settings a:hover{
     color: white;
@@ -265,7 +263,7 @@ body {
 }
 #ul_menu li a{
     display: flex;
-    font-size: 18px;
+    font-size: 20px;
     margin-left: 20px;
     font-weight: 500;
     text-decoration: none;
@@ -273,7 +271,7 @@ body {
     cursor: pointer;
     border: solid black 1px;
     border-radius: 20px;
-    height: 30px;
+    height: 40px;
     width: 145px;
     justify-content: center;
     align-items: center;
@@ -296,7 +294,6 @@ body {
 #div_logout img{
     width: 30px;
     height: 30px;
-    border-radius: 50%;
     margin-left: 15px;
 }
 #div_logout a{
@@ -448,17 +445,11 @@ body {
     align-items: center;
 }
 
-#content_admin ul{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-}
 #content_admin ul li{
     display: flex;
     align-items: center;
     flex-direction: row;
-    height: 100px;
+    height: 150px;
     width: 400px;
 }
 
@@ -476,11 +467,11 @@ body {
     display: flex;
     position: relative;
     width: 250px;
-    height: 60px;
+    height: 85px;
     cursor: pointer;
     justify-content: center;
     align-items: center;
-    font-size: 28px;
+    font-size: 35px;
     font-weight: bold;
     color: rgb(0, 0, 0);
     background-color:rgb(207, 206, 206);
@@ -498,12 +489,9 @@ body {
 }
 
 #p_admin {
-    font-size: 34px;
+    font-size: 40px;
     font-weight: bold;
     margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
 }
 
 
