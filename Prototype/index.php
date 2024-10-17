@@ -1,6 +1,10 @@
 <!-- Ensure that xamp is running and navagiatve to localhost/COMP2030-Software_Prototype_Group_2/Prototype/index.php -->
+<?php
+include './pages/login.php'; // Include authentication logic
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,11 +12,12 @@
     <title>Login_Page</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
     <header class="landing_header">
         <div>
             <img src="images\placeholder.jpg" alt="Logo">
-            <a href="./index.php">SMB Dashboard</a>
+            <a href="./index.php">SMD Dashboard</a>
         </div>
         <ul>
             <li class="title">
@@ -30,8 +35,13 @@
             <p>
                 Welcome to the [Company Name] Smart Manufacturing Dashboard! Please login to continue.
             </p>
+            <?php if (isset($login_err) && $login_err): ?>
+                <div style="color: red;">
+                    <p><?php echo htmlspecialchars($login_err); ?></p>
+                </div>
+            <?php endif; ?>
             <hr>
-            <form action=".\pages\home.php" method="post">
+            <form action="" method="post">
                 <ul>
                     <li>
                         <label for="username">USERNAME</label>
@@ -48,16 +58,17 @@
                         <label for="sign_in">Keep me signed in</label>
                     </div>
                     <a href=".\pages\password.php">Forgotten Password?</a>
-                </div> 
-                    <button type="submit">Login</button>
+                </div>
+                <button type="submit">Login</button>
             </form>
         </div>
     </main>
-    
+
     <footer class="landing_footer">
         <div id="support">
             <a href="">Support</a>
         </div>
     </footer>
 </body>
+
 </html>
