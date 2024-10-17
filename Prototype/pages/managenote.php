@@ -57,7 +57,6 @@ require_once "../inc/dbconn.inc.php";
                 } 
                 
                 elseif ($_GET["type"] == "delete") {
-                    // Delete the note
                     $sql = "DELETE FROM Notes WHERE id = ?;";
                     $statement = mysqli_stmt_init($conn);
                     mysqli_stmt_prepare($statement, $sql);
@@ -80,7 +79,6 @@ require_once "../inc/dbconn.inc.php";
             } 
             
             elseif (isset($_POST["type"]) && $_POST["type"] == "create") {
-                // Handle the form submission to create a new note
                 $name = htmlspecialchars($_POST["name"]);
                 $content = htmlspecialchars($_POST["content"]);
                 $machine_name = htmlspecialchars($_POST["machine_name"]);
@@ -101,7 +99,6 @@ require_once "../inc/dbconn.inc.php";
             } 
             
             elseif (isset($_POST["update_note"])) {
-                // Handle the form submission to update the note
                 $id = htmlspecialchars($_POST["id"]);
                 $name = htmlspecialchars($_POST["name"]);
                 $content = htmlspecialchars($_POST["content"]);
