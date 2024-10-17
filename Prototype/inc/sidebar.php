@@ -19,7 +19,7 @@
         <li>
             <img src="../images/adminIcon.png" alt="administation">
             <a href="admin.php">
-                Administation
+                Administration
             </a>
         </li>
         <li>
