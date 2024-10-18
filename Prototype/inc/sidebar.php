@@ -41,7 +41,7 @@
             </a>
         </li>
         <div id="ul_support_settings">
-            <li style="display: none;">
+            <li>
                 <img src="../images/settingsIcon.png" alt="settings">
                 <a href="settings.php">
                     Settings

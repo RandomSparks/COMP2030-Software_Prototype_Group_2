@@ -444,7 +444,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
 #content_admin ul li{
     display: flex;
     align-items: center;
@@ -487,11 +486,11 @@ body {
     height: 70px;
     margin-right: 25px;
 }
-
 #p_admin {
     font-size: 40px;
     font-weight: bold;
     margin-bottom: 20px;
+    height: 160px;
 }
 
 
@@ -606,7 +605,7 @@ body {
     max-width: 250px;
     border: solid black 1px;
     width: 250px;
-    max-width: 250px;
+    max-width: 350px;
     height: 160px;
 }
 .div_content .overview_wrapper {
@@ -621,7 +620,8 @@ body {
     width: 250px;
     max-width: 250px;
     height: 160px;
-    border: solid black 1px;
+    border: solid black 2px;
+    box-shadow: 2px 2px 2px black;
     margin: 10px;
     text-align: center;
     font-size: 12px;
