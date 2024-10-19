@@ -448,7 +448,7 @@ body {
     display: flex;
     align-items: center;
     flex-direction: row;
-    height: 150px;
+    height: 110px;
     width: 400px;
 }
 
@@ -489,8 +489,8 @@ body {
 #p_admin {
     font-size: 40px;
     font-weight: bold;
-    margin-bottom: 20px;
-    height: 160px;
+    margin-bottom: 5px;
+    height: 50px;
 }
 
 
@@ -502,27 +502,26 @@ body {
 #performance-main {
     display: flex;
     flex-wrap: nowrap;
-    height: calc(100vh - 40px); /* Adjust height to account for the footer */
-    overflow: hidden; /* Prevent overflow */
+    overflow: hidden;
 }
-
-/* Style the performance table container */
-
-/* Style the table */
 #factory_logs_table {
     width: 100%;
     border-collapse: collapse;
     height: 100%;
+    overflow-x: scroll;
 }
-
 #factory_logs_table th, #factory_logs_table td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 3px;
 }
 
 #factory_logs_table th {
     background-color: #f2f2f2;
     text-align: left;
+}
+#factory_logs_table tr:hover {
+    background-color: #f5f5f5;
+    cursor: pointer;
 }
 /* Style the scrollbars for WebKit browsers */
 #perf_table::-webkit-scrollbar {
@@ -673,3 +672,189 @@ body {
 #overview-main ::-webkit-scrollbar-thumb:hover {
     background-color: #717171; 
 }
+
+/* Notes CSS */
+/* -------------------------------------- */
+#notes_count {
+    margin-top: 10px;
+}
+#notes-main #notes_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+#notes-main #notes_table th, 
+#notes-main #notes_table td {
+    border: 1px solid #ddd;
+    padding: 3px;
+}
+
+#notes-main #notes_table th {
+    background-color: #f2f2f2;
+    text-align: center;
+    font-weight: bold;
+}
+
+#notes-main #notes_table td {
+    text-align: left;
+}
+
+#notes-main #notes_count {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#notes-main #form_createnote {
+    display: flex;
+    margin: 0 auto; 
+}
+
+#notes-main #form_createnote input[type='text'],
+#notes-main #form_createnote textarea,
+#notes-main #form_createnote select {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin: 0 5px;
+}
+
+#notes-main #form_createnote textarea {
+    resize: vertical;
+}
+
+#notes-main #form_createnote button {
+    padding: 8px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    height: 50px;   
+}
+
+#notes-main #form_createnote button:hover {
+    background-color: #45a049;
+}
+
+/* Add a hover effect for table rows */
+#notes-main #notes_table tr:hover {
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+/* Style links in the table */
+#notes-main #notes_table a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#notes-main #notes_table a:hover {
+    text-decoration: underline;
+}
+
+/* Summary CSS */
+/* --------------------------------------- */
+
+/* Style the summary info section */
+.summary_info {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the form */
+.summary_info form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Adds space between form elements */
+    margin-bottom: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.summary_info label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.summary_info input[type="date"],
+.summary_info input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.summary_info input[type="date"]:focus,
+.summary_info input[type="text"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.summary_info input[type="submit"] {
+    padding: 12px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.summary_info input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.summary_info table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.summary_info table th, 
+.summary_info table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.summary_info table th {
+    background-color: #f2f2f2;
+    text-align: center;
+    font-weight: bold;
+}
+
+.summary_info table td {
+    text-align: center;
+}
+
+.summary_info table tr:hover {
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+.summary_info h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+}
+
+

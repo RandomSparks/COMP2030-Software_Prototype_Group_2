@@ -28,10 +28,10 @@
                     $numnote = mysqli_fetch_assoc($count_result);
                     echo "<h2 id='notes_count'>";
                     if($numnote['count'] > 1){
-                        echo "{$numnote['count']} Notes";
+                        echo "Notes ({$numnote['count']})";
                     }
                     else if($numnote['count'] > 0){
-                        echo "{$numnote['count']} Note";
+                        echo "Notes {$numnote['count']}";
                     }
                     else {
                         echo "No Notes";
