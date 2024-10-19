@@ -28,6 +28,24 @@
                 Summary
             </a>
         </li>
+        <li>
+            <img src="../images/jobsIcon.png" alt="jobs">
+            <a href="jobs.php">
+                Jobs
+            </a>
+        </li>
+        <li>
+            <img src="../images/machinesIcon.png" alt="machines">
+            <a href="machines.php">
+                Machines
+            </a>
+        </li>
+        <li>
+            <img src="../images/usersIcon.png" alt="users">
+            <a href="users.php">
+                Users
+            </a>
+        </li>
     </ul>
     <div id="div_logout">
         <img src="../images/logoutIcon.png" alt="Logout">
