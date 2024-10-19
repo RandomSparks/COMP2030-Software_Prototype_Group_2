@@ -533,6 +533,7 @@ body {
     /* Prevent overflow */
     overflow: hidden;
 }
+
 #factory_logs_table {
     width: 100%;
     border-collapse: collapse;
@@ -542,7 +543,6 @@ body {
 
 #factory_logs_table th,
 #factory_logs_table td {
-#factory_logs_table th, #factory_logs_table td {
     border: 1px solid #ddd;
     padding: 3px;
 }
@@ -551,10 +551,12 @@ body {
     background-color: #f2f2f2;
     text-align: left;
 }
+
 #factory_logs_table tr:hover {
     background-color: #f5f5f5;
     cursor: pointer;
 }
+
 /* Style the scrollbars for WebKit browsers */
 #perf_table::-webkit-scrollbar {
     width: 16px;
@@ -663,6 +665,7 @@ body {
     flex-wrap: wrap;
 }
 
+
 .div_content .overview_wrapper .analytics_box {
     width: 250px;
     max-width: 250px;
@@ -732,12 +735,14 @@ body {
 
 .perf_table {
     /* Add styles for the performance table */
-    margin-top: 20px; /* Ensure there is space above the performance table */
+    margin-top: 20px;
+    /* Ensure there is space above the performance table */
     width: 100%;
     border-collapse: collapse;
 }
 
-.perf_table th, .perf_table td {
+.perf_table th,
+.perf_table td {
     border: 1px solid black;
     padding: 8px;
     text-align: left;
@@ -752,13 +757,14 @@ body {
 #notes_count {
     margin-top: 10px;
 }
+
 #notes-main #notes_table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 10px;
 }
 
-#notes-main #notes_table th, 
+#notes-main #notes_table th,
 #notes-main #notes_table td {
     border: 1px solid #ddd;
     padding: 3px;
@@ -783,7 +789,7 @@ body {
 
 #notes-main #form_createnote {
     display: flex;
-    margin: 0 auto; 
+    margin: 0 auto;
 }
 
 #notes-main #form_createnote input[type='text'],
@@ -809,7 +815,7 @@ body {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-    height: 50px;   
+    height: 50px;
 }
 
 #notes-main #form_createnote button:hover {
@@ -847,7 +853,8 @@ body {
 .summary_info form {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Adds space between form elements */
+    gap: 15px;
+    /* Adds space between form elements */
     margin-bottom: 20px;
     background-color: #fff;
     padding: 20px;
@@ -901,7 +908,7 @@ body {
     margin-top: 20px;
 }
 
-.summary_info table th, 
+.summary_info table th,
 .summary_info table td {
     border: 1px solid #ddd;
     padding: 12px;
@@ -929,5 +936,4 @@ body {
     text-align: center;
     font-weight: bold;
     color: #333;
-}
 }
