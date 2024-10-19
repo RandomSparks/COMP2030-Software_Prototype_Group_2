@@ -519,69 +519,6 @@ body {
 }
 
 
-
-
-/* ++++++++++++++++++++*/
-
-/* Ensure the main content is displayed as a flex container */
-#performance-main {
-    display: flex;
-    flex-wrap: nowrap;
-    height: calc(100vh - 40px);
-    /* Adjust height to account for the footer */
-    overflow: hidden;
-    /* Prevent overflow */
-    overflow: hidden;
-}
-
-#factory_logs_table {
-    width: 100%;
-    border-collapse: collapse;
-    height: 100%;
-    overflow-x: scroll;
-}
-
-#factory_logs_table th,
-#factory_logs_table td {
-    border: 1px solid #ddd;
-    padding: 3px;
-}
-
-#factory_logs_table th {
-    background-color: #f2f2f2;
-    text-align: left;
-}
-
-#factory_logs_table tr:hover {
-    background-color: #f5f5f5;
-    cursor: pointer;
-}
-
-/* Style the scrollbars for WebKit browsers */
-#perf_table::-webkit-scrollbar {
-    width: 16px;
-    /* Set the width of the scrollbar */
-    height: 16px;
-    /* Set the height of the scrollbar */
-}
-
-#perf_table::-webkit-scrollbar-thumb {
-    background-color: #888;
-    /* Set the color of the scrollbar thumb */
-    border-radius: 8px;
-    /* Set the border radius of the scrollbar thumb */
-}
-
-#perf_table::-webkit-scrollbar-thumb:hover {
-    background-color: #555;
-    /* Set the color of the scrollbar thumb on hover */
-}
-
-#perf_table::-webkit-scrollbar-track {
-    background-color: #f1f1f1;
-    /* Set the color of the scrollbar track */
-}
-
 /* Overview php Styles */
 /* ------------------------------------------------- */
 
@@ -683,13 +620,47 @@ body {
     background-color: #81d69d;
 }
 
-.div_content .analytics_box h3,
-.div_content .machine_info h3 {
+
+.div_content .analytics_box h3, #perf_table h3 {
     text-decoration: underline;
     margin-top: 3px;
     font-size: 18px;
     margin-bottom: 4px;
 }
+
+#perf_table {
+    border: solid black 1px;
+    box-shadow: 2px 2px 2px black;
+    margin: 10px;
+    text-align: center;
+    font-size: 12px;
+    transition: border-radius .5s ease, background-color .5s ease;
+    cursor: pointer;
+}
+
+#factory_logs_table {
+    width: 100%;
+    border-collapse: collapse;
+    height: 100%;
+    overflow-x: scroll;
+}
+
+#factory_logs_table th,
+#factory_logs_table td {
+    border: 1px solid #ddd;
+    padding: 3px;
+}
+
+#factory_logs_table th {
+    background-color: #f2f2f2;
+    text-align: left;
+}
+
+#factory_logs_table tr:hover {
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
 
 #overview-main table {
     border-collapse: collapse;
@@ -732,24 +703,6 @@ body {
     background-color: #717171;
 }
 
-.perf_table {
-    /* Add styles for the performance table */
-    margin-top: 20px;
-    /* Ensure there is space above the performance table */
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.perf_table th,
-.perf_table td {
-    border: 1px solid black;
-    padding: 8px;
-    text-align: left;
-}
-
-.perf_table th {
-    background-color: #f2f2f2;
-}
 
 /* Notes CSS */
 /* -------------------------------------- */
@@ -786,14 +739,14 @@ body {
     text-align: center;
 }
 
-#notes-main #form_createnote {
+.form_createnote {
     display: flex;
     margin: 0 auto;
 }
 
-#notes-main #form_createnote input[type='text'],
-#notes-main #form_createnote textarea,
-#notes-main #form_createnote select {
+.form_createnote input[type='text'],
+.form_createnote textarea,
+.form_createnote select {
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -802,11 +755,11 @@ body {
     margin: 0 5px;
 }
 
-#notes-main #form_createnote textarea {
+.form_createnote textarea {
     resize: vertical;
 }
 
-#notes-main #form_createnote button {
+.form_createnote button {
     padding: 8px;
     background-color: #4CAF50;
     color: white;
@@ -817,7 +770,7 @@ body {
     height: 50px;
 }
 
-#notes-main #form_createnote button:hover {
+.form_createnote button:hover {
     background-color: #45a049;
 }
 
@@ -937,8 +890,18 @@ body {
     color: #333;
 }
 
+
 #pref_table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+
+#job_list {
+    margin: 0 10px 10px 10px;
+    border : 1px solid #ddd;
+}
+
+#note_h2 {
+    margin-bottom: 10px;
+    text-align: center;
 }
