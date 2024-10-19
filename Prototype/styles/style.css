@@ -1,7 +1,7 @@
 /* Styles for website should be developed here */
 
 /* Universal Styles */
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
@@ -11,6 +11,7 @@
 body {
     font-family: 'Gill Sans', sans-serif;
 }
+
 /* ------------------*/
 
 /* "Landing page styles" e.g login + forgot password */
@@ -22,7 +23,8 @@ body {
     background-color: rgb(184, 184, 184);
     position: relative;
 }
-.landing_header div img{
+
+.landing_header div img {
     width: 50px;
     height: 50px;
     top: 20px;
@@ -33,7 +35,8 @@ body {
     position: absolute;
     object-fit: contain;
 }
-.landing_header a{
+
+.landing_header a {
     font-size: 26px;
     top: 20px;
     left: 85px;
@@ -43,7 +46,8 @@ body {
     color: black;
     text-decoration: none;
 }
-.landing_header ul{
+
+.landing_header ul {
     width: 500px;
     list-style-type: none;
     display: flex;
@@ -51,12 +55,14 @@ body {
     align-items: center;
     flex-direction: column;
 }
-.landing_header ul .title{
+
+.landing_header ul .title {
     font-size: 32px;
     margin-bottom: 5px;
     font-weight: bold;
 }
-.landing_header ul p{
+
+.landing_header ul p {
     font-style: italic;
     text-align: center;
     font-size: 16px;
@@ -69,6 +75,7 @@ body {
     align-items: center;
     width: 100vw;
 }
+
 .landing_main .box {
     margin-top: 40px;
     width: 400px;
@@ -79,10 +86,12 @@ body {
     box-shadow: 2px 2px 2px black;
     margin-bottom: 60px;
 }
-.landing_main .box p{
+
+.landing_main .box p {
     margin: 20px;
     font-size: 14px;
 }
+
 .landing_main form {
     width: 100%;
     display: flex;
@@ -91,15 +100,18 @@ body {
     align-items: center;
     text-align: left;
 }
+
 .landing_main form ul {
     list-style-type: none;
     margin-top: 20px;
 }
+
 .landing_main form ul li {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
 }
+
 .landing_main form ul li label {
     display: flex;
     flex-direction: column;
@@ -107,13 +119,16 @@ body {
     font-weight: 600;
     margin-bottom: 10px;
 }
-.landing_main form ul li input {
+
+.landing_main form ul li input,
+.landing_main form ul li textarea {
     width: 300px;
     font-size: 14px;
     padding: 5px;
     border: solid black 2px;
     border-radius: 3px;
 }
+
 .landing_main form ul li textarea {
     width: 300px;
     font-size: 14px;
@@ -129,10 +144,12 @@ body {
     width: 80%;
     font-size: 14px;
 }
-.landing_main form .rememberMe input{
+
+.landing_main form .rememberMe input {
     margin-right: 2px;
     cursor: pointer;
 }
+
 .landing_main form .rememberMe a {
     text-align: right;
     font-size: 14px;
@@ -140,6 +157,7 @@ body {
     font-style: italic;
     color: black;
 }
+
 .landing_main form #forgot_password_submit {
     margin-top: 10px;
 }
@@ -155,6 +173,7 @@ body {
     border: none;
     cursor: pointer;
 }
+
 .landing_main form button:hover {
     background-color: rgb(125, 125, 125);
 }
@@ -170,18 +189,21 @@ body {
     position: fixed;
     bottom: 0;
 }
+
 .landing_footer #support {
-   font-size: 20px;
-   margin-top: 20px;
-   display: flex;
-   width: 200px;
-   justify-content: center;
+    font-size: 20px;
+    margin-top: 20px;
+    display: flex;
+    width: 200px;
+    justify-content: center;
 }
-.landing_footer #support a{
+
+.landing_footer #support a {
     color: black;
     text-decoration: none;
 }
-.landing_footer #support a:hover{
+
+.landing_footer #support a:hover {
     font-style: italic;
     text-decoration: underline;
 }
@@ -222,6 +244,7 @@ body {
     height: 60px;
     font-weight: normal;
 }
+
 #div_logo img {
     width: 50px;
     height: 50px;
@@ -233,6 +256,7 @@ body {
     position: absolute;
     object-fit: contain;
 }
+
 #div_logo h1 {
     font-size: 20px;
     text-wrap: wrap;
@@ -245,23 +269,30 @@ body {
     height: 600px;
     margin-bottom: 45px
 }
-#ul_menu li, #ul_support_settings li{
+
+#ul_menu li,
+#ul_support_settings li {
     display: flex;
     align-items: center;
     height: 50px;
     margin-left: 10px;
     margin-top: 10px;
 }
-#ul_menu a:hover, #ul_support_settings a:hover{
+
+#ul_menu a:hover,
+#ul_support_settings a:hover {
     color: white;
     background-color: rgb(64, 61, 255);
     text-decoration: underline;
 }
-#ul_menu li img, #ul_support_settings li img{
+
+#ul_menu li img,
+#ul_support_settings li img {
     width: 30px;
     height: 30px;
 }
-#ul_menu li a{
+
+#ul_menu li a {
     display: flex;
     font-size: 20px;
     margin-left: 20px;
@@ -291,12 +322,14 @@ body {
     background-color: rgb(207, 206, 206);
     padding-right: 61px;
 }
-#div_logout img{
+
+#div_logout img {
     width: 30px;
     height: 30px;
     margin-left: 15px;
 }
-#div_logout a{
+
+#div_logout a {
     display: flex;
     font-size: 16px;
     margin-left: 35px;
@@ -321,7 +354,8 @@ body {
     width: 100%;
     height: 30px;
 }
-#div_logout a:hover{
+
+#div_logout a:hover {
     text-decoration: underline;
     color: white;
     background-color: rgb(156, 0, 0);
@@ -405,46 +439,36 @@ body {
 /* Home page content */
 .div_content #content_title {
     display: flex;
-    position: absolute;
-    height: 75px;
+    position: relative;
+    height: 90px;
     font-size: 30px;
     font-weight: bold;
     top: 25px;
     left: 15px;
 }
 
-.div_content #content_p {
+.div_content .content_p {
     display: flex;
-    position: absolute;
-    height: 150px;
+    position: relative;
     font-size: 16px;
-    top: 89px;
     left: 15px;
 }
 
-.div_content #content_p2 {
-    display: flex;
-    position: absolute;
-    font-size: 16px;
-    top: 150px;
-    left: 15px;
-}
 /* ++++++++++++++++++++*/
 
 /* Admin page content */
 
 #content_admin {
     display: flex;
-    position: absolute;
-    top: 110px;
-    left: 220px;
+    position: relative;
+    top: 50px;
     width: calc(100vw - 220px);
-    height: calc(100vh - 150px);
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-#content_admin ul li{
+
+#content_admin ul li {
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -453,16 +477,16 @@ body {
 }
 
 #content_admin ul li a {
- text-decoration: none;
- padding: 5px;
+    text-decoration: none;
+    padding: 5px;
 }
 
-#content_admin ul li a button:hover{
+#content_admin ul li a button:hover {
     color: rgb(255, 255, 255);
     background-color: rgb(64, 61, 255);
 }
 
-#content_admin ul li a button{
+#content_admin ul li a button {
     display: flex;
     position: relative;
     width: 250px;
@@ -473,19 +497,20 @@ body {
     font-size: 35px;
     font-weight: bold;
     color: rgb(0, 0, 0);
-    background-color:rgb(207, 206, 206);
+    background-color: rgb(207, 206, 206);
     border-radius: 40px;
     border: 3px solid rgb(0, 0, 0);
     box-shadow: 3px 3px 3px black;
 }
 
-#content_admin ul li img{
+#content_admin ul li img {
     display: flex;
     position: relative;
     width: 70px;
     height: 70px;
     margin-right: 25px;
 }
+
 #p_admin {
     font-size: 40px;
     font-weight: bold;
@@ -502,15 +527,22 @@ body {
 #performance-main {
     display: flex;
     flex-wrap: nowrap;
+    height: calc(100vh - 40px);
+    /* Adjust height to account for the footer */
+    overflow: hidden;
+    /* Prevent overflow */
     overflow: hidden;
 }
+
 #factory_logs_table {
     width: 100%;
     border-collapse: collapse;
     height: 100%;
     overflow-x: scroll;
 }
-#factory_logs_table th, #factory_logs_table td {
+
+#factory_logs_table th,
+#factory_logs_table td {
     border: 1px solid #ddd;
     padding: 3px;
 }
@@ -519,27 +551,35 @@ body {
     background-color: #f2f2f2;
     text-align: left;
 }
+
 #factory_logs_table tr:hover {
     background-color: #f5f5f5;
     cursor: pointer;
 }
+
 /* Style the scrollbars for WebKit browsers */
 #perf_table::-webkit-scrollbar {
-    width: 16px; /* Set the width of the scrollbar */
-    height: 16px; /* Set the height of the scrollbar */
+    width: 16px;
+    /* Set the width of the scrollbar */
+    height: 16px;
+    /* Set the height of the scrollbar */
 }
 
 #perf_table::-webkit-scrollbar-thumb {
-    background-color: #888; /* Set the color of the scrollbar thumb */
-    border-radius: 8px; /* Set the border radius of the scrollbar thumb */
+    background-color: #888;
+    /* Set the color of the scrollbar thumb */
+    border-radius: 8px;
+    /* Set the border radius of the scrollbar thumb */
 }
 
 #perf_table::-webkit-scrollbar-thumb:hover {
-    background-color: #555; /* Set the color of the scrollbar thumb on hover */
+    background-color: #555;
+    /* Set the color of the scrollbar thumb on hover */
 }
 
 #perf_table::-webkit-scrollbar-track {
-    background-color: #f1f1f1; /* Set the color of the scrollbar track */
+    background-color: #f1f1f1;
+    /* Set the color of the scrollbar track */
 }
 
 /* Overview php Styles */
@@ -555,7 +595,8 @@ body {
     margin-top: 20px;
     font-size: 16px;
 }
-.div_content .overview_title img{
+
+.div_content .overview_title img {
     object-fit: cover;
     border-radius: 50%;
     height: 113px;
@@ -563,6 +604,7 @@ body {
     margin-top: 10px;
     margin-bottom: 20px;
 }
+
 .div_content .utilization_section {
     margin: 20px 0;
 }
@@ -594,6 +636,7 @@ body {
     height: 100%;
     border-radius: 10px;
 }
+
 .div_content .machine_info {
     margin-left: 120px;
     width: 280px;
@@ -607,19 +650,23 @@ body {
     transition: border-radius .5s ease, background-color .5s ease;
     cursor: pointer;
 }
+
 .div_content .machine_info:hover {
     border-radius: 4px;
     background-color: #81d69d;
 }
+
 .div_content .overview_wrapper {
-    position: fixed; 
+    position: fixed;
     left: 620px;
     display: flex;
     width: 650px;
     height: auto;
     flex-wrap: wrap;
 }
-.div_content .overview_wrapper .analytics_box{
+
+
+.div_content .overview_wrapper .analytics_box {
     width: 250px;
     max-width: 250px;
     height: 160px;
@@ -631,56 +678,71 @@ body {
     transition: border-radius .5s ease, background-color .5s ease;
     cursor: pointer;
 }
+
 .div_content .overview_wrapper .analytics_box:hover {
     border-radius: 4px;
     background-color: #81d69d;
 }
-.div_content .overview_wrapper .analytics_box h3, .div_content .machine_info h3{
+
+.div_content .overview_wrapper .analytics_box h3,
+.div_content .machine_info h3 {
     text-decoration: underline;
     margin-top: 3px;
     font-size: 18px;
     margin-bottom: 4px;
 }
+
 #overview-main table {
     border-collapse: collapse;
     width: 100%;
 }
-#overview-main table, #overview-main th, #overview-main td {
+
+#overview-main table,
+#overview-main th,
+#overview-main td {
     border: 1px solid black;
 }
-#overview-main th, #overview-main td {
+
+#overview-main th,
+#overview-main td {
     text-align: left;
     padding: 3px;
 }
+
 #overview-main ::-webkit-scrollbar {
-    width: 15px; 
+    width: 15px;
     border-radius: 4px;
 }
+
 #overview-main ::-webkit-scrollbar-track {
-    background: #f1f1f1; 
+    background: #f1f1f1;
     border-radius: 4px;
-    
+
 }
+
 #overview-main ::-webkit-scrollbar-thumb {
     background-color: #818181;
-    border-radius: 5px; 
-    border: 3px solid #000000; 
+    border-radius: 5px;
+    border: 3px solid #000000;
     border: solid black 1px;
     height: 25%;
     margin: 0px 2px;
 }
+
 #overview-main ::-webkit-scrollbar-thumb:hover {
-    background-color: #717171; 
+    background-color: #717171;
 }
 
 .perf_table {
     /* Add styles for the performance table */
-    margin-top: 20px; /* Ensure there is space above the performance table */
+    margin-top: 20px;
+    /* Ensure there is space above the performance table */
     width: 100%;
     border-collapse: collapse;
 }
 
-.perf_table th, .perf_table td {
+.perf_table th,
+.perf_table td {
     border: 1px solid black;
     padding: 8px;
     text-align: left;
@@ -695,13 +757,14 @@ body {
 #notes_count {
     margin-top: 10px;
 }
+
 #notes-main #notes_table {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 10px;
 }
 
-#notes-main #notes_table th, 
+#notes-main #notes_table th,
 #notes-main #notes_table td {
     border: 1px solid #ddd;
     padding: 3px;
@@ -726,7 +789,7 @@ body {
 
 #notes-main #form_createnote {
     display: flex;
-    margin: 0 auto; 
+    margin: 0 auto;
 }
 
 #notes-main #form_createnote input[type='text'],
@@ -752,7 +815,7 @@ body {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-    height: 50px;   
+    height: 50px;
 }
 
 #notes-main #form_createnote button:hover {
@@ -790,7 +853,8 @@ body {
 .summary_info form {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Adds space between form elements */
+    gap: 15px;
+    /* Adds space between form elements */
     margin-bottom: 20px;
     background-color: #fff;
     padding: 20px;
@@ -844,7 +908,7 @@ body {
     margin-top: 20px;
 }
 
-.summary_info table th, 
+.summary_info table th,
 .summary_info table td {
     border: 1px solid #ddd;
     padding: 12px;
@@ -873,5 +937,3 @@ body {
     font-weight: bold;
     color: #333;
 }
-
-
