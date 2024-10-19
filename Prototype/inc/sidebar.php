@@ -17,12 +17,6 @@
             </a>
         </li>
         <li>
-            <img src="../images/adminIcon.png" alt="administation">
-            <a href="admin.php">
-                Administration
-            </a>
-        </li>
-        <li>
             <img src="../images/performanceIcon.png" alt="performance">
             <a href="performance.php">
                 Performance
