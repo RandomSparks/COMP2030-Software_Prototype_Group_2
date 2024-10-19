@@ -28,6 +28,44 @@
                 You may also configure your personal settings, request support, or log out of your account.
             </p>
         </div>
+        
+        <div class="div_content" id="content_admin">
+            <p id="p_admin">
+            What would you like to manage?
+            </p>
+            <ul>
+                <li>
+                    <a href="./alerts.php">
+                    <img src="../images/jobsIcon.png" alt="Alerts">
+                    </a>
+                    <a href="./jobs.php">
+                        <button>
+                        Jobs
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a href="./machines.php">
+                    <img src="../images/machinesIcon.png" alt="Machines">
+                    </a>
+                    <a href="./machines.php">
+                        <button>
+                        Machines
+                        </button>
+                    </a>
+                </li>
+                <li>
+                    <a href="./maintenance.php">
+                    <img src="../images/usersIcon.png" alt="User">
+                    </a>
+                    <a href="./users.php">
+                        <button>
+                        Users
+                        </button>
+                    </a>
+                </li>        
+            </ul>
+        </div>
     </main>
     <footer>
         <?php require_once "../inc/info.php"; ?>
