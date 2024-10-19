@@ -68,7 +68,7 @@
                 }
                 mysqli_close($conn);
             ?>
-            <form action='managenote.php' method='POST' id="form_createnote">
+            <form action='managenote.php' method='POST' class="form_createnote">
                 <input type="hidden" name="type" value="create">
                 <input type='text' name='name' placeholder='Note Name' maxlength="50" required>
                 <textarea name="content" id="textarea_createnote" placeholder="Note Content" maxlength="100"></textarea>

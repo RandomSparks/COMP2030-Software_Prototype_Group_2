@@ -97,7 +97,7 @@ $stmt->close();
                 </div>
             <?php endif; ?>
 
-            <table border="1" cellpadding="10">
+            <table id="job_list">
                 <tr>
                     <th>Job Title</th>
                     <th>Date Started</th>
@@ -161,7 +161,8 @@ $stmt->close();
                 }
             }
             ?>
-            <form action='managejobnote.php' method='POST' id="form_create_job_note">
+            <h2 id="note_h2">Create a Note</h2>
+            <form action='managejobnote.php' method='POST' class="form_createnote">
                 <input type="hidden" name="type" value="create">
                 <select name='job_name' required>
                     <?php foreach ($jobs as $job): ?>

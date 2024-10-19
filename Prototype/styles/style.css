@@ -739,14 +739,14 @@ body {
     text-align: center;
 }
 
-#notes-main #form_createnote {
+.form_createnote {
     display: flex;
     margin: 0 auto;
 }
 
-#notes-main #form_createnote input[type='text'],
-#notes-main #form_createnote textarea,
-#notes-main #form_createnote select {
+.form_createnote input[type='text'],
+.form_createnote textarea,
+.form_createnote select {
     padding: 8px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -755,11 +755,11 @@ body {
     margin: 0 5px;
 }
 
-#notes-main #form_createnote textarea {
+.form_createnote textarea {
     resize: vertical;
 }
 
-#notes-main #form_createnote button {
+.form_createnote button {
     padding: 8px;
     background-color: #4CAF50;
     color: white;
@@ -770,7 +770,7 @@ body {
     height: 50px;
 }
 
-#notes-main #form_createnote button:hover {
+.form_createnote button:hover {
     background-color: #45a049;
 }
 
@@ -888,4 +888,14 @@ body {
     text-align: center;
     font-weight: bold;
     color: #333;
+}
+
+#job_list {
+    margin: 0 10px 10px 10px;
+    border : 1px solid #ddd;
+}
+
+#note_h2 {
+    margin-bottom: 10px;
+    text-align: center;
 }
