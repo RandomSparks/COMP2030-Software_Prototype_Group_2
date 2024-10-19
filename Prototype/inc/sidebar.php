@@ -28,20 +28,6 @@
                 Summary
             </a>
         </li>
-        <div id="ul_support_settings">
-            <li>
-                <img src="../images/settingsIcon.png" alt="settings">
-                <a href="settings.php">
-                    Settings
-                </a>
-            </li>
-            <li>
-                <img src="../images/supportIcon.png" alt="support">
-                <a href="support.php">
-                    Support
-                </a>
-            </li>
-        </div>
     </ul>
     <div id="div_logout">
         <img src="../images/logoutIcon.png" alt="Logout">

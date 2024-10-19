@@ -309,9 +309,9 @@ body {
     background-color: rgba(255, 255, 255, 0.719);
 }
 
-#ul_support_settings {
+/** #ul_support_settings {
     margin-top: 40px;
-}
+} **/
 
 #div_logout {
     display: flex;
@@ -593,9 +593,8 @@ body {
     background-color: #81d69d;
 }
 
-.div_content .overview_wrapper {
-    position: fixed;
-    left: 620px;
+.div_content #overview_wrapper {
+    position: relative;
     display: flex;
     width: 650px;
     height: auto;
@@ -620,6 +619,7 @@ body {
     border-radius: 4px;
     background-color: #81d69d;
 }
+
 
 .div_content .analytics_box h3, #perf_table h3 {
     text-decoration: underline;
@@ -889,6 +889,12 @@ body {
     font-weight: bold;
     color: #333;
 }
+
+
+#pref_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 
 #job_list {
     margin: 0 10px 10px 10px;

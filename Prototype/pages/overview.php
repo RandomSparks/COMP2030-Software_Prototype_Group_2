@@ -20,24 +20,24 @@
         ?>
 
         <div class="div_content">
-            <div class="overview_title">
-                <h2>
-                    Overview
-                </h2>
-                <img src="../images/companyNameIcon.png" alt="CompanyNameIcon">
-            </div>
+            <div id="overview_wrapper">
+                <div class="overview_title">
+                    <h2>
+                        Overview
+                    </h2>
+                    <img src="../images/companyNameIcon.png" alt="CompanyNameIcon">
+                </div>
 
-            <div class="analytics_box">
-                <h3>Machine Temperature</h3>
-                <?php
+                <div class="analytics_box">
+                    <h3>Machine Temperature</h3>
+                    <?php
 
-                $sql = "SELECT timestamp, machine_name, temperature FROM factory_logs LIMIT 25";
-                $result = $conn->query($sql);
+                    $sql = "SELECT timestamp, machine_name, temperature FROM factory_logs LIMIT 25";
+                    $result = $conn->query($sql);
 
-                if (!$result) {
-                    echo "Error: " . $conn->error;
-                    exit;
-                }
+                    if (!$result) {
+                        echo "Error: " . $conn->error;
+                        exit;
 
                 if ($result->num_rows > 0) {
                     echo '<table id="machine_temperature_table">';
@@ -50,12 +50,26 @@
                     echo '</thead>';
                     echo '<tbody>';
 
+
                     while ($row = $result->fetch_assoc()) {
                         echo '<tr>';
                         echo '<td>' . $row["timestamp"] . '</td>';
                         echo '<td>' . $row["machine_name"] . '</td>';
                         echo '<td>' . $row["temperature"] . '</td>';
                         echo '</tr>';
+                    }
+
+            
+            
+                <div class="analytics_box">
+                    <h3>Machine Pressure</h3>
+                    <?php
+                    $sql = "SELECT timestamp, machine_name, pressure FROM factory_logs LIMIT 25";
+                    $result = $conn->query($sql);
+
+                    if (!$result) {
+                        echo "Error: " . $conn->error;
+                        exit;
                     }
 
                     echo '</tbody>';
@@ -206,7 +220,6 @@
                         echo '<td>' . htmlspecialchars($row["speed"]) . '</td>';
                         echo '</tr>';
                     }
-
                     echo '</tbody>';
                     echo '</table>';
                 } else {
@@ -221,16 +234,16 @@
                 require_once "../inc/dbconn.inc.php";
 
                 $sql = "
-        SELECT fl.*
-        FROM factory_logs fl
-        INNER JOIN (
-            SELECT machine_name, MAX(timestamp) AS latest_timestamp
-            FROM factory_logs
-            GROUP BY machine_name
-        ) subquery
-        ON fl.machine_name = subquery.machine_name AND fl.timestamp = subquery.latest_timestamp
-        ORDER BY fl.timestamp DESC
-    ";
+                    SELECT fl.*
+                    FROM factory_logs fl
+                    INNER JOIN (
+                        SELECT machine_name, MAX(timestamp) AS latest_timestamp
+                        FROM factory_logs
+                        GROUP BY machine_name
+                    ) subquery
+                    ON fl.machine_name = subquery.machine_name AND fl.timestamp = subquery.latest_timestamp
+                    ORDER BY fl.timestamp DESC
+                ";
                 $result = $conn->query($sql);
 
                 if (!$result) {
@@ -283,7 +296,7 @@
                 ?>
             </div>
         </div>
-
+    </div>
     </main>
     <footer>
         <?php require_once "../inc/info.php"; ?>
