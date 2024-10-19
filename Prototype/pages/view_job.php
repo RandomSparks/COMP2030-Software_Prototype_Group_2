@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../inc/dbconn.inc.php';
+require_once "../inc/dbconn.inc.php";
 
 // Check if job ID is provided in the URL
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
@@ -11,19 +11,36 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
 
 $jobId = $_GET['id'];
 
-// Fetch the job details from the database
-$stmt = $conn->prepare("SELECT job_name, job_completed, date_started, date_completed, job_allocated, job_description FROM jobs WHERE id = ?");
+// Fetch job details from the database
+$stmt = $conn->prepare("SELECT job_name, date_started, date_completed, job_allocated, job_description, job_completed FROM jobs WHERE id = ?");
+if ($stmt === false) {
+    die('Prepare failed: ' . htmlspecialchars($conn->error));
+}
 $stmt->bind_param('i', $jobId);
 $stmt->execute();
-$stmt->bind_result($jobName, $jobCompleted, $dateStarted, $dateCompleted, $jobAllocated, $jobDescription);
+$stmt->bind_result($jobName, $dateStarted, $dateCompleted, $jobAllocated, $jobDescription, $jobCompleted);
 $stmt->fetch();
 $stmt->close();
-$conn->close();
 
 // Check if the job was found
 if (!$jobName) {
     // Redirect back to the job list if no job is found
     header("Location: job_list.php");
+    exit();
+}
+
+// Handle form submission to add a new note
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['note_content'])) {
+    $noteContent = htmlspecialchars($_POST['note_content']);
+    $stmt = $conn->prepare("INSERT INTO job_notes (job_name, note, created_at) VALUES (?, ?, NOW())");
+    if ($stmt === false) {
+        die('Prepare failed: ' . htmlspecialchars($conn->error));
+    }
+    $stmt->bind_param('ss', $jobName, $noteContent);
+    $stmt->execute();
+    $stmt->close();
+    // Redirect to avoid form resubmission
+    header("Location: view_job.php?id=" . $jobId);
     exit();
 }
 ?>
@@ -34,7 +51,7 @@ if (!$jobName) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Developed_By" content="smul0003_basn0058_tami0009_will1941_beam0036_park0903">
-    <title>Create Jobs</title>
+    <title>View Job</title>
     <link rel="stylesheet" href="../styles/style.css">
     <script src="../scripts/script.js" defer></script>
 </head>
@@ -48,7 +65,6 @@ if (!$jobName) {
         <div class="div_content">
             <div>
                 <a href="job_list.php">Back to Job List</a>
-
                 <a href="edit_job.php?id=<?php echo $jobId; ?>">Edit Job</a>
             </div>
             <div>
@@ -62,6 +78,37 @@ if (!$jobName) {
                 <strong>Status:</strong> <?php echo $jobCompleted ? 'Completed' : 'Not Completed'; ?><br>
             </div>
 
+            <div>
+                <strong>Job Notes:</strong><br>
+                <?php
+                // Fetch the job notes from the database
+                $stmt = $conn->prepare("SELECT note, created_at FROM job_notes WHERE job_name = ?");
+                if ($stmt === false) {
+                    die('Prepare failed: ' . htmlspecialchars($conn->error));
+                }
+                $stmt->bind_param('s', $jobName);
+                $stmt->execute();
+                $stmt->bind_result($noteContent, $dateCreated);
+
+                while ($stmt->fetch()) {
+                    echo '<div>';
+                    echo '<strong>Note time:</strong> ' . htmlspecialchars($dateCreated) . '<br>';
+                    echo '<strong>Note contents:</strong> <pre>' . htmlspecialchars($noteContent) . '</pre><br>';
+                    echo '</div>';
+                }
+
+                $stmt->close();
+                ?>
+            </div>
+
+            <div>
+                <h3>Add a New Note</h3>
+                <form method="POST" action="">
+                    <textarea name="note_content" rows="4" cols="50" placeholder="Enter your note here" required></textarea><br>
+                    <button type="submit">Add Note</button>
+                </form>
+            </div>
+
             <br>
 
     </main>
@@ -71,3 +118,6 @@ if (!$jobName) {
 </body>
 
 </html>
+<?php
+$conn->close(); // Close the connection after all queries are executed
+?>
