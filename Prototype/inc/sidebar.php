@@ -40,7 +40,7 @@
                 Summary
             </a>
         </li>
-        <div id="ul_support_settings">
+    <!--    <div id="ul_support_settings">
             <li>
                 <img src="../images/settingsIcon.png" alt="settings">
                 <a href="settings.php">
@@ -53,7 +53,7 @@
                     Support
                 </a>
             </li>
-        </div>
+        </div> -->
     </ul>
     <div id="div_logout">
         <img src="../images/logoutIcon.png" alt="Logout">
