@@ -656,9 +656,8 @@ body {
     background-color: #81d69d;
 }
 
-.div_content .overview_wrapper {
-    position: fixed;
-    left: 620px;
+.div_content #overview_wrapper {
+    position: relative;
     display: flex;
     width: 650px;
     height: auto;
@@ -666,7 +665,7 @@ body {
 }
 
 
-.div_content .overview_wrapper .analytics_box {
+.div_content .analytics_box {
     width: 250px;
     max-width: 250px;
     height: 160px;
@@ -679,12 +678,12 @@ body {
     cursor: pointer;
 }
 
-.div_content .overview_wrapper .analytics_box:hover {
+.div_content .analytics_box:hover {
     border-radius: 4px;
     background-color: #81d69d;
 }
 
-.div_content .overview_wrapper .analytics_box h3,
+.div_content .analytics_box h3,
 .div_content .machine_info h3 {
     text-decoration: underline;
     margin-top: 3px;
@@ -936,4 +935,10 @@ body {
     text-align: center;
     font-weight: bold;
     color: #333;
+}
+
+#pref_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }

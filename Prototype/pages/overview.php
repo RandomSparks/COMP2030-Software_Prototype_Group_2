@@ -20,7 +20,7 @@
         ?>
 
         <div class="div_content">
-            <div>
+            <div id="overview_wrapper">
                 <div class="overview_title">
                     <h2>
                         Overview
@@ -28,7 +28,7 @@
                     <img src="../images/companyNameIcon.png" alt="CompanyNameIcon">
                 </div>
 
-                <div class="machine_info">
+                <div class="analytics_box">
                     <h3>Machine Temperature</h3>
                     <?php
 
@@ -67,8 +67,8 @@
                     ?>
                 </div>
 
-            </div>
-            <div class="overview_wrapper">
+            
+            
                 <div class="analytics_box">
                     <h3>Machine Pressure</h3>
                     <?php
@@ -217,23 +217,24 @@
                     }
                     ?>
                 </div>
-            </div>
+            
+        
 
             <div id="perf_table">
                 <?php
                 require_once "../inc/dbconn.inc.php";
 
                 $sql = "
-        SELECT fl.*
-        FROM factory_logs fl
-        INNER JOIN (
-            SELECT machine_name, MAX(timestamp) AS latest_timestamp
-            FROM factory_logs
-            GROUP BY machine_name
-        ) subquery
-        ON fl.machine_name = subquery.machine_name AND fl.timestamp = subquery.latest_timestamp
-        ORDER BY fl.timestamp DESC
-    ";
+                    SELECT fl.*
+                    FROM factory_logs fl
+                    INNER JOIN (
+                        SELECT machine_name, MAX(timestamp) AS latest_timestamp
+                        FROM factory_logs
+                        GROUP BY machine_name
+                    ) subquery
+                    ON fl.machine_name = subquery.machine_name AND fl.timestamp = subquery.latest_timestamp
+                    ORDER BY fl.timestamp DESC
+                ";
                 $result = $conn->query($sql);
 
                 if (!$result) {
@@ -286,7 +287,7 @@
                 ?>
             </div>
         </div>
-
+    </div>
     </main>
     <footer>
         <?php require_once "../inc/info.php"; ?>
