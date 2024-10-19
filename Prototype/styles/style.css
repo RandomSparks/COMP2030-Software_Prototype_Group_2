@@ -673,6 +673,23 @@ body {
     background-color: #717171; 
 }
 
+.perf_table {
+    /* Add styles for the performance table */
+    margin-top: 20px; /* Ensure there is space above the performance table */
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.perf_table th, .perf_table td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+.perf_table th {
+    background-color: #f2f2f2;
+}
+
 /* Notes CSS */
 /* -------------------------------------- */
 #notes_count {
