@@ -13,7 +13,7 @@ $offset = ($page - 1) * $records_per_page;
 
 // Fetch logs with LIMIT for pagination
 $sql = "SELECT timestamp, machine_name, temperature, pressure, vibration, humidity, power_consumption, 
-        operational_status, error_code, production_count, maintenance_log, speed, user 
+        operational_status, error_code, production_count, maintenance_log, speed
         FROM factory_logs 
         ORDER BY timestamp DESC 
         LIMIT ?, ?";
@@ -77,7 +77,6 @@ if ($end_page - $start_page < $visible_pages - 1) {
                         <th>Production Count</th>
                         <th>Maintenance Log</th>
                         <th>Speed</th>
-                        <th>User</th>
                     </tr>
                     <?php while ($row = $result->fetch_assoc()): ?>
                         <tr>
@@ -93,7 +92,6 @@ if ($end_page - $start_page < $visible_pages - 1) {
                             <td><?php echo htmlspecialchars($row['production_count']); ?></td>
                             <td><?php echo htmlspecialchars($row['maintenance_log']); ?></td>
                             <td><?php echo htmlspecialchars($row['speed'] ?? ''); ?></td>
-                            <td><?php echo htmlspecialchars($row['user'] ?? ''); ?></td>
                         </tr>
                     <?php endwhile; ?>
                 </table>
