@@ -70,7 +70,7 @@ INSERT INTO Notes(name, content, machine_name) VALUES('Note from PO Bob', 'Sorry
 
 CREATE TABLE jobs (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    job_name VARCHAR(255) NOT NULL,
+    job_name VARCHAR(255) NOT NULL UNIQUE,
     job_completed BOOLEAN DEFAULT FALSE,
     date_started DATE NOT NULL,
     date_completed DATE DEFAULT NULL,
@@ -78,4 +78,13 @@ CREATE TABLE jobs (
     job_description TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- Create job_notes table that stores notes for jobs and references job_name
+CREATE TABLE job_notes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    job_name VARCHAR(255) NOT NULL,
+    note TEXT NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (job_name) REFERENCES jobs(job_name)
 );
