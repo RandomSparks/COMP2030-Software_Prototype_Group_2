@@ -38,6 +38,7 @@
                     if (!$result) {
                         echo "Error: " . $conn->error;
                         exit;
+                        }
 
                 if ($result->num_rows > 0) {
                     echo '<table id="machine_temperature_table">';
@@ -57,19 +58,6 @@
                         echo '<td>' . $row["machine_name"] . '</td>';
                         echo '<td>' . $row["temperature"] . '</td>';
                         echo '</tr>';
-                    }
-
-            
-            
-                <div class="analytics_box">
-                    <h3>Machine Pressure</h3>
-                    <?php
-                    $sql = "SELECT timestamp, machine_name, pressure FROM factory_logs LIMIT 25";
-                    $result = $conn->query($sql);
-
-                    if (!$result) {
-                        echo "Error: " . $conn->error;
-                        exit;
                     }
 
                     echo '</tbody>';
