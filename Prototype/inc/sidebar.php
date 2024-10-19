@@ -17,12 +17,6 @@
             </a>
         </li>
         <li>
-            <img src="../images/performanceIcon.png" alt="performance">
-            <a href="performance.php">
-                Performance
-            </a>
-        </li>
-        <li>
             <img src="../images/reportingIcon.png" alt="notes">
             <a href="notes.php">
                 Notes
