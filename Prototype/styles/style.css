@@ -596,7 +596,7 @@ body {
 .div_content #overview_wrapper {
     position: relative;
     display: flex;
-    width: 650px;
+    width: 100%;
     height: auto;
     flex-wrap: wrap;
 }
@@ -895,6 +895,7 @@ body {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    width: 100%;
 }
 #job_list {
     margin: 0 10px 10px 10px;
