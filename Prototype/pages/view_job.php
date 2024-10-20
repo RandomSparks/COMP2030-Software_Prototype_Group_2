@@ -65,7 +65,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['note_content'])) {
         <div class="div_content">
             <div>
                 <a href="jobs.php">Back to Job List</a>
-                <a href="edit_job.php?id=<?php echo $jobId; ?>">Edit Job</a>
             </div>
             <div>
                 <strong>Job Name:</strong> <?php echo htmlspecialchars($jobName); ?><br>

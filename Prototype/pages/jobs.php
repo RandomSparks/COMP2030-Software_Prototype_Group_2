@@ -34,15 +34,42 @@ if (isset($_GET['toggle_id'])) {
 
 // Handle job deletion
 if (isset($_GET['delete_id'])) {
-    $jobId = $_GET['delete_id'];
-    $stmt = $conn->prepare("DELETE FROM jobs WHERE id = ?");
-    $stmt->bind_param('i', $jobId);
-    if ($stmt->execute()) {
-        $successMessage = "Job deleted successfully.";
-    } else {
-        $errorMessage = "Error deleting job: " . $stmt->error;
+    $jobId = intval($_GET['delete_id']);
+
+    // Fetch the job name before deleting
+    $sql = "SELECT job_name FROM jobs WHERE id = ?";
+    $stmt = mysqli_stmt_init($conn);
+    if (mysqli_stmt_prepare($stmt, $sql)) {
+        mysqli_stmt_bind_param($stmt, "i", $jobId);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_bind_result($stmt, $jobName);
+        mysqli_stmt_fetch($stmt);
+        mysqli_stmt_close($stmt);
     }
-    $stmt->close();
+
+    // Delete related notes
+    $sql = "DELETE FROM job_notes WHERE job_name = ?";
+    $stmt = mysqli_stmt_init($conn);
+    if (mysqli_stmt_prepare($stmt, $sql)) {
+        mysqli_stmt_bind_param($stmt, "s", $jobName);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_close($stmt);
+    }
+
+    // Delete the job
+    $sql = "DELETE FROM jobs WHERE id = ?";
+    $stmt = mysqli_stmt_init($conn);
+    if (mysqli_stmt_prepare($stmt, $sql)) {
+        mysqli_stmt_bind_param($stmt, "i", $jobId);
+        if (mysqli_stmt_execute($stmt)) {
+            $successMessage = "Job deleted successfully.";
+        } else {
+            $errorMessage = "Error deleting job: " . mysqli_error($conn);
+        }
+        mysqli_stmt_close($stmt);
+    } else {
+        $errorMessage = "Error deleting job: " . mysqli_error($conn);
+    }
 }
 
 // Fetch the list of jobs
@@ -118,7 +145,6 @@ $stmt->close();
                             </td>
                             <td>
                                 <a href="view_job.php?id=<?php echo $job['id']; ?>">View</a> |
-                                <a href="edit_job.php?id=<?php echo $job['id']; ?>">Edit</a> |
                                 <a href="?delete_id=<?php echo $job['id']; ?>"
                                     onclick="return confirm('Are you sure you want to delete this job?');">Delete</a> |
                                 <a href="?toggle_id=<?php echo $job['id']; ?>"
