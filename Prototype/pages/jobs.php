@@ -131,36 +131,6 @@ $stmt->close();
                 <?php endif; ?>
             </table>
 
-            <?php
-            $sql = "SELECT id, name, content, job_name FROM job_notes;";
-
-            if ($result = mysqli_query($conn, $sql)) {
-                if (mysqli_num_rows($result) > 0) {
-                    echo '<table id="notes_table">';
-                    echo '<thead>';
-                    echo '<tr>';
-                    echo '<th>Note Name:</th>';
-                    echo '<th>Note Contents:</th>';
-                    echo '<th>Job Name:</th>';
-                    echo '<th>Note Management:</th>';
-                    echo '</tr>';
-                    echo '</thead>';
-                    echo '<tbody>';
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        echo '<tr>';
-                        echo '<td>' . htmlspecialchars($row["name"]) . '</td>';
-                        echo '<td>' . htmlspecialchars($row["content"]) . '</td>';
-                        echo '<td>' . htmlspecialchars($row["job_name"]) . '</td>';
-                        echo '<td> <a href="managenote.php?id=' . $row["id"] . '&type=edit">Edit</a> <a href="managenote.php?id=' . $row["id"] . '&type=delete">Delete</a> </td>';
-                        echo '</tr>';
-                    }
-                    echo '</tbody>';
-                    echo "</table>";
-
-                    mysqli_free_result($result);
-                }
-            }
-            ?>
             <h2 id="note_h2">Create a Note</h2>
             <form action='managejobnote.php' method='POST' class="form_createnote">
                 <input type="hidden" name="type" value="create">
