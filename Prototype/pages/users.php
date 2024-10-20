@@ -1,10 +1,21 @@
+<?php
+session_start();
+require_once "../inc/dbconn.inc.php";
+
+// Check if the user is logged in and is an administrator
+if ($_SESSION["role_id"] !== 'Administrator') {
+    header("Location: ../pages/home.php");
+
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Developed_By" content="smul0003_basn0058_tami0009_will1941_beam0036_park0903">
-    <title>Dashboard/Home</title>
+    <title>Users</title>
     <link rel="stylesheet" href="../styles/style.css">
     <script src="../scripts/script.js" defer></script>
 </head>
@@ -17,7 +28,6 @@
         <div class="div_content">
             <h2>Manage Users</h2>
             <?php
-            require_once "../inc/dbconn.inc.php";
             $sql = "SELECT user_id, username, password, role_id FROM users";
             $result = mysqli_query($conn, $sql);
 
@@ -42,7 +52,7 @@
                     echo '</tr>';
                 }
                 echo '<tr>';
-                echo '<td><a href="users.php?add=true>"Add User</a></td>';
+                echo '<td><a href="users.php?add=true">Add User</a></td>';
                 echo '</tr>';
                 echo '</tbody>';
                 echo '</table>';
@@ -68,7 +78,7 @@
                     echo '<label for="username">Username:</label>';
                     echo '<input type="text" name="username" value="' . htmlspecialchars($user["username"]) . '" required>';
                     echo '<label for="password">New Password:</label>';
-                    echo '<input type="password" name="password" placeholder="Encrypted"required>';
+                    echo '<input type="password" name="password" placeholder="Encrypted" required>';
                     echo '<label for="role_id">Role:</label>';
                     echo '<select name="role_id" required>';
                     $roles = ['Administrator', 'Manager', 'Operator', 'Auditor'];
@@ -89,7 +99,7 @@
                 echo '<h3>Add User</h3>';
                 echo '<form action="editusers.php" method="post">';
                 echo '<label for="username">Username:</label>';
-                echo '<input type="text" name="username" placeholder="Username"required>';
+                echo '<input type="text" name="username" placeholder="Username" required>';
                 echo '<label for="password">Password:</label>';
                 echo '<input type="text" name="password" placeholder="Password" required>';
                 echo '<label for="role_id">Role:</label>';
@@ -102,9 +112,7 @@
                 echo '<button type="submit" name="add_user">Add User</button>';
                 echo '</form>';
             }
-
-
-            ?>
+        ?>
         </div>
     </main>
     <footer>
