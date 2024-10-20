@@ -5,7 +5,7 @@ require_once "../inc/dbconn.inc.php";
 // Check if job ID is provided in the URL
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     // Redirect back to the job list if ID is not provided or invalid
-    header("Location: job_list.php");
+    header("Location: jobs.php");
     exit();
 }
 
@@ -25,7 +25,7 @@ $stmt->close();
 // Check if the job was found
 if (!$jobName) {
     // Redirect back to the job list if no job is found
-    header("Location: job_list.php");
+    header("Location: jobs.php");
     exit();
 }
 
@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['note_content'])) {
         ?>
         <div class="div_content">
             <div>
-                <a href="job_list.php">Back to Job List</a>
+                <a href="jobs.php">Back to Job List</a>
                 <a href="edit_job.php?id=<?php echo $jobId; ?>">Edit Job</a>
             </div>
             <div>
