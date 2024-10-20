@@ -397,18 +397,9 @@ body {
     right: 120px;
     font-weight: bold;
     font-size: 30px;
-    top: 25px;
+    top: 35px;
 }
 
-#div_header #header_subtitle {
-    display: flex;
-    position: absolute;
-    right: 120px;
-    top: 55px;
-    font-style: italic;
-    color: grey;
-    font-size: 20px;
-}
 
 #div_info {
     background-color: rgb(239, 239, 239);

@@ -1,10 +1,35 @@
-<!-- Ensure that xamp is running and navagiatve to localhost/COMP2030-Software_Prototype_Group_2/Prototype/index.php -->
+<!-- Ensure that xamp is running and navigate to localhost/COMP2030-Software_Prototype_Group_2/Prototype/index.php -->
 <?php
-include './pages/login.php'; // Include authentication logic
+session_start();
+require_once "./inc/dbconn.inc.php";
+
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = htmlspecialchars($_POST["username"]);
+    $password = htmlspecialchars($_POST["password"]);
+
+    $sql = "SELECT user_id, username, password, role_id FROM users WHERE username = ?";
+    $statement = mysqli_stmt_init($conn);
+    mysqli_stmt_prepare($statement, $sql);
+    mysqli_stmt_bind_param($statement, "s", $username);
+    mysqli_stmt_execute($statement);
+    $result = mysqli_stmt_get_result($statement);
+    $user = mysqli_fetch_assoc($result);
+    mysqli_stmt_close($statement);
+
+    if ($user && $password == $user["password"]) {
+        $_SESSION["user_id"] = $user["user_id"];
+        $_SESSION["username"] = $user["username"];
+        $_SESSION["role_id"] = $user["role_id"];
+        header("Location: ./pages/home.php");
+        exit();
+    } else {
+        $login_err = "Invalid username or password.";
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,11 +37,10 @@ include './pages/login.php'; // Include authentication logic
     <title>Login_Page</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
-
 <body>
     <header class="landing_header">
         <div>
-            <img src="images\placeholder.jpg" alt="Logo">
+            <img src="images/placeholder.jpg" alt="Logo">
             <a href="./index.php">SMD Dashboard</a>
         </div>
         <ul>
@@ -57,18 +81,16 @@ include './pages/login.php'; // Include authentication logic
                         <input type="checkbox" id="sign_in" name="sign_in">
                         <label for="sign_in">Keep me signed in</label>
                     </div>
-                    <a href=".\pages\password.php">Forgotten Password?</a>
+                    <a href="./pages/password.php">Forgotten Password?</a>
                 </div>
                 <button type="submit">Login</button>
             </form>
         </div>
     </main>
-
     <footer class="landing_footer">
         <div id="support">
             <a href="">Support</a>
         </div>
     </footer>
 </body>
-
 </html>
