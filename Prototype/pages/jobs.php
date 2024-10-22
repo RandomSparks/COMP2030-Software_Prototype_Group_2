@@ -2,7 +2,6 @@
 session_start();
 include '../inc/dbconn.inc.php';
 
-
 // Handle toggling a job's completion status
 if (isset($_GET['toggle_id'])) {
     $jobId = $_GET['toggle_id'];
@@ -47,14 +46,6 @@ if (isset($_GET['delete_id'])) {
         mysqli_stmt_close($stmt);
     }
 
-    // Delete related notes
-    $sql = "DELETE FROM job_notes WHERE job_name = ?";
-    $stmt = mysqli_stmt_init($conn);
-    if (mysqli_stmt_prepare($stmt, $sql)) {
-        mysqli_stmt_bind_param($stmt, "s", $jobName);
-        mysqli_stmt_execute($stmt);
-        mysqli_stmt_close($stmt);
-    }
 
     // Delete the job
     $sql = "DELETE FROM jobs WHERE id = ?";
@@ -72,10 +63,15 @@ if (isset($_GET['delete_id'])) {
     }
 }
 
-// Fetch the list of jobs
-$stmt = $conn->prepare("SELECT id, job_name, date_started, date_completed, job_completed FROM jobs ORDER BY created_at DESC");
+// Fetch the list of jobs along with the assigned user name and machine
+$stmt = $conn->prepare("
+    SELECT jobs.id, jobs.job_name, jobs.date_started, jobs.date_completed, jobs.job_completed, users.name AS user_name, jobs.machine
+    FROM jobs
+    LEFT JOIN users ON jobs.job_allocated = users.user_id
+    ORDER BY jobs.created_at DESC
+");
 $stmt->execute();
-$stmt->bind_result($id, $jobName, $dateStarted, $dateCompleted, $jobCompleted);
+$stmt->bind_result($id, $jobName, $dateStarted, $dateCompleted, $jobCompleted, $userName, $machine);
 
 $jobs = [];
 while ($stmt->fetch()) {
@@ -85,6 +81,8 @@ while ($stmt->fetch()) {
         'date_started' => $dateStarted,
         'date_completed' => $dateCompleted,
         'job_completed' => $jobCompleted,
+        'user_name' => $userName,
+        'machine' => $machine,
     ];
 }
 $stmt->close();
@@ -97,7 +95,7 @@ $stmt->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Developed_By" content="smul0003_basn0058_tami0009_will1941_beam0036_park0903">
-    <title>Create Jobs</title>
+    <title>Job List</title>
     <link rel="stylesheet" href="../styles/style.css">
     <script src="../scripts/script.js" defer></script>
 </head>
@@ -127,26 +125,32 @@ $stmt->close();
             <table id="job_list">
                 <tr>
                     <th>Job Title</th>
+                    <th>Assigned User</th>
+                    <th>Machine</th>
                     <th>Date Started</th>
                     <th>Date Completed</th>
                     <th>Actions</th>
                 </tr>
                 <?php if (empty($jobs)): ?>
                     <tr>
-                        <td colspan="4">No jobs found.</td>
+                        <td colspan="6">No jobs found.</td>
                     </tr>
                 <?php else: ?>
                     <?php foreach ($jobs as $job): ?>
                         <tr>
                             <td><?php echo htmlspecialchars($job['job_name']); ?></td>
+                            <td><?php echo htmlspecialchars($job['user_name']); ?></td>
+                            <td><?php echo htmlspecialchars($job['machine'] ?: 'N/A'); ?></td>
                             <td><?php echo htmlspecialchars($job['date_started']); ?></td>
                             <td>
                                 <?php echo $job['date_completed'] ? htmlspecialchars($job['date_completed']) : 'Not Completed'; ?>
                             </td>
                             <td>
                                 <a href="view_job.php?id=<?php echo $job['id']; ?>">View</a> |
-                                <a href="?delete_id=<?php echo $job['id']; ?>"
-                                    onclick="return confirm('Are you sure you want to delete this job?');">Delete</a> |
+                                <?php if ($_SESSION["role_id"] === 'Administrator'): ?>
+                                    <a href="?delete_id=<?php echo $job['id']; ?>"
+                                        onclick="return confirm('Are you sure you want to delete this job?');">Delete</a> |
+                                <?php endif; ?>
                                 <a href="?toggle_id=<?php echo $job['id']; ?>"
                                     class="toggle-button <?php echo $job['job_completed'] ? 'completed' : 'not-completed'; ?>">
                                     <?php echo $job['job_completed'] ? 'Mark as Incomplete' : 'Mark as Completed'; ?>
@@ -156,22 +160,6 @@ $stmt->close();
                     <?php endforeach; ?>
                 <?php endif; ?>
             </table>
-
-            <h2 id="note_h2">Create a Note</h2>
-            <form action='managejobnote.php' method='POST' class="form_createnote">
-                <input type="hidden" name="type" value="create">
-                <select name='job_name' required>
-                    <?php foreach ($jobs as $job): ?>
-                        <option value="<?php echo htmlspecialchars($job['job_name']); ?>">
-                            <?php echo htmlspecialchars($job['job_name']); ?>
-                        </option>
-                    <?php endforeach; ?>
-
-                </select>
-                <textarea name="content" id="textarea_createnote" placeholder="Note Content" maxlength="100"></textarea>
-
-                <button type="submit">Create Note</button>
-            </form>
         </div>
         <?php mysqli_close($conn); ?>
     </main>
