@@ -1,4 +1,7 @@
 <!-- Ensure that xamp is running and navigate to localhost/COMP2030-Software_Prototype_Group_2/Prototype/index.php -->
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
