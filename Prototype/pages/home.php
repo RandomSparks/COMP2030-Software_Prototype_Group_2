@@ -1,8 +1,4 @@
 <!-- Ensure that xamp is running and navagiatve to localhost/COMP2030-Software_Prototype_Group_2/Prototype/index.php -->
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,13 +20,11 @@ session_start();
         ?>
         <div class="div_content">
             <h1 id="content_title">
-                Welcome to the Smart Manufacturing Dashboard, <?php echo $_SESSION["name"] ?>.
+                Welcome to the [Company Name] Smart Manufacturing Dashboard, Hiroshi.
             </h1>
             <p class="content_p">
-                This Dashboard will allow to view factory status, production information, performance metrics, and any
-                factory alerts.
-                You can also edit accounts, assign jobs, machines, manage job information, and read reports from
-                production operators.
+                This Dashboard will allow to view factory status, production information, performance metrics, and any factory alerts.
+                You can also edit accounts, assign jobs, machines, manage job information, and read reports from production operators.
             </p>
             <p class="content_p">
                 You may also configure your personal settings, request support, or log out of your account.
@@ -61,20 +55,16 @@ session_start();
                             </button>
                         </a>
                     </li>
-                    <?php if ($_SESSION["role_id"] === 'Administrator'): ?>
-
-                        <li>
-                            <a href="./maintenance.php">
-                                <img src="../images/usersIcon.png" alt="User">
-                            </a>
-                            <a href="./users.php">
-                                <button>
-                                    Users
-                                </button>
-                            </a>
-                        </li>
-                    <?php endif; ?>
-
+                    <li>
+                        <a href="./maintenance.php">
+                            <img src="../images/usersIcon.png" alt="User">
+                        </a>
+                        <a href="./users.php">
+                            <button>
+                                Users
+                            </button>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

@@ -28,14 +28,13 @@ if ($_SESSION["role_id"] !== 'Administrator') {
         <div class="div_content">
             <h2>Manage Users</h2>
             <?php
-            $sql = "SELECT name, user_id, username, password, role_id FROM users";
+            $sql = "SELECT user_id, username, password, role_id FROM users";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
                 echo '<table>';
                 echo '<thead>';
                 echo '<tr>';
-                echo '<th>Name</th>';
                 echo '<th>Username</th>';
                 echo '<th>Role</th>';
                 echo '<th>Password Hash</th>';
@@ -45,7 +44,6 @@ if ($_SESSION["role_id"] !== 'Administrator') {
                 echo '<tbody>';
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo '<tr>';
-                    echo '<td>' . htmlspecialchars($row["name"]) . '</td>';
                     echo '<td>' . htmlspecialchars($row["username"]) . '</td>';
                     echo '<td>' . htmlspecialchars($row["role_id"]) . '</td>';
                     echo '<td>' . password_hash($row["password"], PASSWORD_DEFAULT) . '</td>';
@@ -54,6 +52,7 @@ if ($_SESSION["role_id"] !== 'Administrator') {
                     echo '</tr>';
                 }
                 echo '<tr>';
+                echo '<td><a href="users.php?add=true">Add User</a></td>';
                 echo '</tr>';
                 echo '</tbody>';
                 echo '</table>';
@@ -64,7 +63,7 @@ if ($_SESSION["role_id"] !== 'Administrator') {
             <?php
             if (isset($_GET["edit"])) {
                 $user_id = htmlspecialchars($_GET["edit"]);
-                $sql = "SELECT user_id, name, username, password, role_id FROM users WHERE user_id = ?";
+                $sql = "SELECT user_id, username, password, role_id FROM users WHERE user_id = ?";
                 $statement = mysqli_stmt_init($conn);
                 mysqli_stmt_prepare($statement, $sql);
                 mysqli_stmt_bind_param($statement, "i", $user_id);
@@ -76,8 +75,6 @@ if ($_SESSION["role_id"] !== 'Administrator') {
                     echo '<h3>Edit User</h3>';
                     echo '<form action="editusers.php" method="post">';
                     echo '<input type="hidden" name="user_id" value="' . $user["user_id"] . '">';
-                    echo '<label for="name">Full Name:</label>';
-                    echo '<input type="text" name="name" value="' . htmlspecialchars($user["name"]) . '" required>';
                     echo '<label for="username">Username:</label>';
                     echo '<input type="text" name="username" value="' . htmlspecialchars($user["username"]) . '" required>';
                     echo '<label for="password">New Password:</label>';
@@ -101,8 +98,6 @@ if ($_SESSION["role_id"] !== 'Administrator') {
             else {
                 echo '<h3>Add User</h3>';
                 echo '<form action="editusers.php" method="post">';
-                echo '<label for="name">Name:</label>';
-                echo '<input type="text" name="name" placeholder="Full Name" required>';
                 echo '<label for="username">Username:</label>';
                 echo '<input type="text" name="username" placeholder="Username" required>';
                 echo '<label for="password">Password:</label>';

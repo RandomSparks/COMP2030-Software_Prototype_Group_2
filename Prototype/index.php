@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = htmlspecialchars($_POST["username"]);
     $password = htmlspecialchars($_POST["password"]);
 
-    $sql = "SELECT user_id, username, password, role_id, name FROM users WHERE username = ?";
+    $sql = "SELECT user_id, username, password, role_id FROM users WHERE username = ?";
     $statement = mysqli_stmt_init($conn);
     mysqli_stmt_prepare($statement, $sql);
     mysqli_stmt_bind_param($statement, "s", $username);
@@ -21,7 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["user_id"] = $user["user_id"];
         $_SESSION["username"] = $user["username"];
         $_SESSION["role_id"] = $user["role_id"];
-        $_SESSION["name"] = $user["name"];
         header("Location: ./pages/home.php");
         exit();
     } else {
@@ -31,7 +30,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,7 +37,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Login_Page</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
-
 <body>
     <header class="landing_header">
         <div>
@@ -96,5 +93,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </footer>
 </body>
-
 </html>

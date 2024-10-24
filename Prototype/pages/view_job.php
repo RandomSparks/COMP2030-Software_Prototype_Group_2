@@ -103,8 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['note_content'])) {
             <div>
                 <h3>Add a New Note</h3>
                 <form method="POST" action="">
-                    <textarea name="note_content" rows="4" cols="50" placeholder="Enter your note here"
-                        required></textarea><br>
+                    <textarea name="note_content" rows="4" cols="50" placeholder="Enter your note here" required></textarea><br>
                     <button type="submit">Add Note</button>
                 </form>
             </div>
