@@ -81,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['note_content'])) {
                 <strong>Job Notes:</strong><br>
                 <?php
                 // Fetch the job notes from the database
-                $stmt = $conn->prepare("SELECT note, created_at FROM job_notes WHERE job_name = ?");
+                $stmt = $conn->prepare("SELECT job_description, created_at FROM jobs WHERE job_name = ?");
                 if ($stmt === false) {
                     die('Prepare failed: ' . htmlspecialchars($conn->error));
                 }
