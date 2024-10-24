@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "../inc/dbconn.inc.php";
 if (isset($_POST["update_user"])) {
     $user_id = htmlspecialchars($_POST["user_id"]);
@@ -16,8 +17,7 @@ if (isset($_POST["update_user"])) {
         echo "An error occurred: " . mysqli_error($conn);
     }
     mysqli_stmt_close($statement);
-}
-else if (isset($_POST["add_user"])) {
+} else if (isset($_POST["add_user"])) {
     $username = htmlspecialchars($_POST["username"]);
     $role_id = htmlspecialchars($_POST["role_id"]);
     $password = htmlspecialchars($_POST["password"]);
@@ -32,8 +32,7 @@ else if (isset($_POST["add_user"])) {
         echo "An error occurred: " . mysqli_error($conn);
     }
     mysqli_stmt_close($statement);
-}
-else if (isset($_GET["delete"])) {
+} else if (isset($_GET["delete"])) {
     $user_id = htmlspecialchars($_GET["delete"]);
     $sql = "DELETE FROM users WHERE user_id = ?";
     $statement = mysqli_stmt_init($conn);
@@ -45,8 +44,7 @@ else if (isset($_GET["delete"])) {
         echo "An error occurred: " . mysqli_error($conn);
     }
     mysqli_stmt_close($statement);
-}
-else {
+} else {
     echo "Error! Invalid request!";
 }
 ?>

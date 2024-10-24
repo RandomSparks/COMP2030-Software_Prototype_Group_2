@@ -1,6 +1,9 @@
-<!-- Ensure that xamp is running and navagiatve to localhost/COMP2030-Software_Prototype_Group_2/Prototype/index.php -->
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,63 +13,96 @@
     <link rel="stylesheet" href="../styles/style.css">
     <script src="../scripts/script.js" defer></script>
 </head>
+
 <body>
     <main id="notes-main">
-        <?php 
-        require_once "../inc/sidebar.php"; 
+        <?php
+        require_once "../inc/sidebar.php";
         require_once "../inc/header.php";
         ?>
         <div class="div_content">
             <?php
-                require_once "../inc/dbconn.inc.php";
+            require_once "../inc/dbconn.inc.php";
 
-                $sql = "SELECT id, name, content, machine_name FROM Notes;";
+            // Check if the user is an administrator
+            $isAdmin = $_SESSION["role_id"] === 'Administrator';
+            $userId = $_SESSION['user_id']; // Assuming you store user_id in session
+            // Prepare the SQL query based on user role
+            if ($isAdmin) {
+                $sql = "SELECT Notes.id, Notes.name, Notes.content, Notes.machine_name, Notes.assigned_to, users.name AS assigned_user 
+                        FROM Notes 
+                        LEFT JOIN Users ON Notes.assigned_to = users.user_id";
+            } else {
+                // Non-admin users only see their assigned notes
+                $sql = "SELECT Notes.id, Notes.name, Notes.content, Notes.machine_name, Notes.assigned_to, users.name AS assigned_user 
+                        FROM Notes 
+                        LEFT JOIN Users ON Notes.assigned_to = users.user_id 
+                        WHERE Notes.assigned_to = ? OR Notes.assigned_to = 0"; // 0 for 'Everyone'
+            }
 
-                $countsql = "SELECT COUNT(*) as count FROM Notes;";
+            // Count the number of notes
+            $countsql = "SELECT COUNT(*) as count FROM Notes" . ($isAdmin ? ";" : " WHERE assigned_to = ? OR assigned_to = 0;");
+            // Prepare statement for counting notes if not admin
+            if (!$isAdmin) {
+                $countstmt = mysqli_prepare($conn, $countsql);
+                mysqli_stmt_bind_param($countstmt, 'i', $userId);
+                mysqli_stmt_execute($countstmt);
+                $count_result = mysqli_stmt_get_result($countstmt);
+            } else {
+                $count_result = mysqli_query($conn, $countsql);
+            }
 
-                if($count_result = mysqli_query($conn, $countsql)){
-                    $numnote = mysqli_fetch_assoc($count_result);
-                    echo "<h2 id='notes_count'>";
-                    if($numnote['count'] > 1){
-                        echo "Notes ({$numnote['count']})";
-                    }
-                    else if($numnote['count'] > 0){
-                        echo "Notes {$numnote['count']}";
-                    }
-                    else {
-                        echo "No Notes";
-                    }
-                    echo "</h2>";
-                    mysqli_free_result($count_result);
-                } 
-
-                if ($result = mysqli_query($conn, $sql)) {
-                    if (mysqli_num_rows($result) > 0) {
-                        echo '<table id="notes_table">';
-                        echo '<thead>';
-                        echo '<tr>';
-                        echo '<th>Note Name:</th>';
-                        echo '<th>Note Contents:</th>';
-                        echo '<th>Machine Name:</th>';
-                        echo '<th>Note Management:</th>';
-                        echo '</tr>';
-                        echo '</thead>';
-                        echo '<tbody>';
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo '<tr>';
-                            echo '<td>' . htmlspecialchars($row["name"]) . '</td>';
-                            echo '<td>' . htmlspecialchars($row["content"]) . '</td>';
-                            echo '<td>' . htmlspecialchars($row["machine_name"]) . '</td>';
-                            echo '<td> <a href="managenote.php?id=' . $row["id"] . '&type=edit">Edit</a> <a href="managenote.php?id=' . $row["id"] . '&type=delete">Delete</a> </td>';
-                            echo '</tr>';
-                        }
-                        echo '</tbody>';
-                        echo "</table>";
-                
-                        mysqli_free_result($result);
-                    }
+            if ($count_result) {
+                $numnote = mysqli_fetch_assoc($count_result);
+                echo "<h2 id='notes_count'>";
+                if ($numnote['count'] > 1) {
+                    echo "Notes ({$numnote['count']})";
+                } else if ($numnote['count'] > 0) {
+                    echo "Notes {$numnote['count']}";
+                } else {
+                    echo "No Notes";
                 }
-                mysqli_close($conn);
+                echo "</h2>";
+                mysqli_free_result($count_result);
+            }
+
+            // Execute the main query to fetch notes
+            if ($isAdmin) {
+                $result = mysqli_query($conn, $sql);
+            } else {
+                $stmt = mysqli_prepare($conn, $sql);
+                mysqli_stmt_bind_param($stmt, 'i', $userId);
+                mysqli_stmt_execute($stmt);
+                $result = mysqli_stmt_get_result($stmt);
+            }
+
+            if ($result && mysqli_num_rows($result) > 0) {
+                echo '<table id="notes_table">';
+                echo '<thead>';
+                echo '<tr>';
+                echo '<th>Note Name:</th>';
+                echo '<th>Note Contents:</th>';
+                echo '<th>Machine Name:</th>';
+                echo '<th>Assigned To:</th>';
+                echo '<th>Note Management:</th>';
+                echo '</tr>';
+                echo '</thead>';
+                echo '<tbody>';
+                while ($row = mysqli_fetch_assoc($result)) {
+                    $assigned_to_display = ($row['assigned_to'] == 0) ? 'Everyone' : htmlspecialchars($row['assigned_user']);
+                    echo '<tr>';
+                    echo '<td>' . htmlspecialchars($row["name"]) . '</td>';
+                    echo '<td>' . htmlspecialchars($row["content"]) . '</td>';
+                    echo '<td>' . htmlspecialchars($row["machine_name"]) . '</td>';
+                    echo '<td>' . $assigned_to_display . '</td>';
+                    echo '<td> <a href="managenote.php?id=' . $row["id"] . '&type=edit">Edit</a> <a href="managenote.php?id=' . $row["id"] . '&type=delete">Delete</a> </td>';
+                    echo '</tr>';
+                }
+                echo '</tbody>';
+                echo "</table>";
+
+                mysqli_free_result($result);
+            }
             ?>
             <form action='managenote.php' method='POST' class="form_createnote">
                 <input type="hidden" name="type" value="create">
@@ -84,6 +120,20 @@
                     <option value='Quality Control Scanner'>Quality Control Scanner</option>
                     <option value='Energy Management System'>Energy Management System</option>
                 </select>
+                <select name="assigned_to" required>
+                    <option value="0">Everyone</option>
+
+                    <?php
+                    // Fetch users from the database
+                    $user_query = "SELECT user_id, name FROM users";
+                    $user_result = mysqli_query($conn, $user_query);
+                    if ($user_result && mysqli_num_rows($user_result) > 0) {
+                        while ($user_row = mysqli_fetch_assoc($user_result)) {
+                            echo '<option value="' . $user_row['user_id'] . '">' . htmlspecialchars($user_row['name']) . '</option>';
+                        }
+                    }
+                    ?>
+                </select>
                 <button type="submit">Create Note</button>
             </form>
         </div>
@@ -92,4 +142,5 @@
         <?php require_once "../inc/info.php"; ?>
     </footer>
 </body>
+
 </html>

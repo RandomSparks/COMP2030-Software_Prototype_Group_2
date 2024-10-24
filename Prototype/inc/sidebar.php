@@ -19,7 +19,7 @@
         <li>
             <img src="../images/reportingIcon.png" alt="notes">
             <a href="notes.php">
-                Notes
+                Messages
             </a>
         </li>
         <li>
@@ -40,12 +40,15 @@
                 Machines
             </a>
         </li>
-        <li>
-            <img src="../images/usersIcon.png" alt="users">
-            <a href="users.php">
-                Users
-            </a>
-        </li>
+        <?php if ($_SESSION["role_id"] === 'Administrator'): ?>
+            <li>
+                <img src="../images/usersIcon.png" alt="users">
+                <a href="users.php">
+                    Users
+                </a>
+            </li>
+        <?php endif; ?>
+
     </ul>
     <div id="div_logout">
         <img src="../images/logoutIcon.png" alt="Logout">
