@@ -77,28 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['note_content'])) {
                 <strong>Status:</strong> <?php echo $jobCompleted ? 'Completed' : 'Not Completed'; ?><br>
             </div>
 
-            <div>
-                <strong>Job Notes:</strong><br>
-                <?php
-                // Fetch the job notes from the database
-                $stmt = $conn->prepare("SELECT note, created_at FROM job_notes WHERE job_name = ?");
-                if ($stmt === false) {
-                    die('Prepare failed: ' . htmlspecialchars($conn->error));
-                }
-                $stmt->bind_param('s', $jobName);
-                $stmt->execute();
-                $stmt->bind_result($noteContent, $dateCreated);
-
-                while ($stmt->fetch()) {
-                    echo '<div>';
-                    echo '<strong>Note time:</strong> ' . htmlspecialchars($dateCreated) . '<br>';
-                    echo '<strong>Note contents:</strong> <pre>' . htmlspecialchars($noteContent) . '</pre><br>';
-                    echo '</div>';
-                }
-
-                $stmt->close();
-                ?>
-            </div>
+      
 
             <div>
                 <h3>Add a New Note</h3>
